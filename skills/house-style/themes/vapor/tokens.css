@@ -76,6 +76,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B02A8C;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
   --letterbox: #12051F;
 }
 .pc-deck[data-theme="vapor"][data-mode="light"]:is([data-palette="neon"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -110,6 +111,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B02A8C;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
 }
 .pc-deck[data-theme="vapor"][data-mode="light"]:is([data-palette="neon"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #B02A8C;
@@ -142,6 +144,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="vapor"][data-mode="light"]:is([data-palette="neon"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -176,6 +179,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #EA39B8;
+  --shadow-print: 0 0 0 0 transparent;
 }
 .pc-deck[data-theme="vapor"][data-mode="light"]:is([data-palette="neon"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -210,6 +214,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B02A8C;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
 }
 /* Violet, light */
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="violet"] {
@@ -245,6 +250,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #6F42C1;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
   --letterbox: #12051F;
 }
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="violet"] .pc-slide[data-surface="alt"] {
@@ -279,6 +285,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #6F42C1;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
 }
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="violet"] .pc-slide[data-surface="accent"] {
   --bg: #6F42C1;
@@ -311,6 +318,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="violet"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -345,6 +353,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A47BF0;
+  --shadow-print: 0 0 0 0 transparent;
 }
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="violet"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -379,6 +388,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #6F42C1;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
 }
 /* Sunset, light */
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="sunset"] {
@@ -414,6 +424,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #C2410C;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
   --letterbox: #12051F;
 }
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="sunset"] .pc-slide[data-surface="alt"] {
@@ -448,6 +459,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #C2410C;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
 }
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="sunset"] .pc-slide[data-surface="accent"] {
   --bg: #C2410C;
@@ -480,6 +492,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="sunset"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -514,6 +527,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF8A4C;
+  --shadow-print: 0 0 0 0 transparent;
 }
 .pc-deck[data-theme="vapor"][data-mode="light"][data-palette="sunset"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -548,6 +562,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #C2410C;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
 }
 /* Neon, dark */
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="neon"], :not([data-palette])) {
@@ -583,6 +598,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #EA39B8;
+  --shadow-print: 0 0 0 0 transparent;
   --letterbox: #0B0214;
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="neon"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -617,6 +633,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #EA39B8;
+  --shadow-print: 0 0 0 0 transparent;
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="neon"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #EA39B8;
@@ -649,6 +666,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1A0933;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="neon"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -683,6 +701,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B02A8C;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="neon"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -717,6 +736,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #EA39B8;
+  --shadow-print: 0 0 0 0 transparent;
 }
 /* Violet, dark */
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="violet"] {
@@ -752,6 +772,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A47BF0;
+  --shadow-print: 0 0 0 0 transparent;
   --letterbox: #0B0214;
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="violet"] .pc-slide[data-surface="alt"] {
@@ -786,6 +807,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A47BF0;
+  --shadow-print: 0 0 0 0 transparent;
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="violet"] .pc-slide[data-surface="accent"] {
   --bg: #A47BF0;
@@ -818,6 +840,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1A0933;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="violet"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -852,6 +875,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #6F42C1;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="violet"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -886,6 +910,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A47BF0;
+  --shadow-print: 0 0 0 0 transparent;
 }
 /* Sunset, dark */
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="sunset"] {
@@ -921,6 +946,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF8A4C;
+  --shadow-print: 0 0 0 0 transparent;
   --letterbox: #0B0214;
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="sunset"] .pc-slide[data-surface="alt"] {
@@ -955,6 +981,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF8A4C;
+  --shadow-print: 0 0 0 0 transparent;
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="sunset"] .pc-slide[data-surface="accent"] {
   --bg: #FF8A4C;
@@ -987,6 +1014,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1A0933;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="sunset"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1021,6 +1049,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #C2410C;
+  --shadow-print: 0 0 0 1px rgba(111, 66, 193, .2);
 }
 .pc-deck[data-theme="vapor"]:is([data-mode="dark"], :not([data-mode]))[data-palette="sunset"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1055,4 +1084,5 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF8A4C;
+  --shadow-print: 0 0 0 0 transparent;
 }

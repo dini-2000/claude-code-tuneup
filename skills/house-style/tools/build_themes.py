@@ -193,6 +193,33 @@ def fill_placeholders(value, tok):
     return re.sub(r'\{([\w-]+)\}', lambda m: tok['--' + m.group(1).replace('_', '-')], value)
 
 
+def top_level(value, sep):
+    """Split a CSS value on sep outside brackets: rgba(0, 0, 0, .1) and color-mix(...) stay whole."""
+    out, depth, cur = [], 0, ''
+    for ch in value:
+        depth += (ch == '(') - (ch == ')')
+        if depth == 0 and (ch.isspace() if sep == ' ' else ch == sep):
+            out.append(cur)
+            cur = ''
+        else:
+            cur += ch
+    return [p.strip() for p in out + [cur] if p.strip()]
+
+
+def print_shadow(value):
+    """--shadow-print, the shadow that core.css prints: --shadow without its blurred layers. Chrome prints a blurred
+    shadow as a soft mask, which Preview and Quick Look on Apple devices draw as a solid box (26 Oct 2026); a shadow
+    without blur prints as drawn, so hard shadows stay."""
+    if value.strip() == 'none':
+        return 'none'
+    keep = []
+    for layer in top_level(value, ','):
+        lengths = [w for w in top_level(layer, ' ') if re.fullmatch(r'-?(\d+\.?\d*|\.\d+)(px)?', w)]
+        if len(lengths) < 3 or float(lengths[2].replace('px', '')) == 0:
+            keep.append(layer)
+    return ', '.join(keep) or '0 0 0 0 transparent'
+
+
 def surface(theme, mode, pal, kind, notes, where):
     """Every colour token for one surface of one palette in one mode."""
     if kind == 'inverse':
@@ -292,6 +319,7 @@ def surface(theme, mode, pal, kind, notes, where):
     for k in list(t):
         if isinstance(t[k], str) and '{' in t[k]:
             t[k] = fill_placeholders(t[k], t)
+    t['--shadow-print'] = print_shadow(t['--shadow'])
     check(t, kind, notes, where)
     return t
 

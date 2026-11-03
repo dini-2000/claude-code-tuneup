@@ -168,3 +168,5 @@
 .pc-deck[data-motion="static"] .pcx-flow-chip { cursor: default; }
 .pc-deck[data-motion="static"] .pcx-flow-chip:not(.is-on):hover { border-color: var(--line); }
 @media print { .pcx-tip { display: none !important; } }
+/* a blurred shadow prints as a soft mask, which Preview and Quick Look draw as a solid box (core.css, print) */
+@media print { .pcx-flow-node.is-on { box-shadow: none; } }

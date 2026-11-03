@@ -87,6 +87,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #4E6B52;
+  --shadow-print: none;
   --letterbox: #1A1819;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode])):is([data-palette="sage"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -121,6 +122,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #4E6B52;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode])):is([data-palette="sage"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #4E6B52;
@@ -153,6 +155,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode])):is([data-palette="sage"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -187,6 +190,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A7C4A9;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode])):is([data-palette="sage"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -221,6 +225,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #4E6B52;
+  --shadow-print: none;
 }
 /* Rose, light */
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="rose"] {
@@ -256,6 +261,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #A35069;
+  --shadow-print: none;
   --letterbox: #1A1819;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="rose"] .pc-slide[data-surface="alt"] {
@@ -290,6 +296,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #A35069;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="rose"] .pc-slide[data-surface="accent"] {
   --bg: #A35069;
@@ -322,6 +329,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="rose"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -356,6 +364,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E8A3B6;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="rose"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -390,6 +399,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #A35069;
+  --shadow-print: none;
 }
 /* Dusk, light */
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="dusk"] {
@@ -425,6 +435,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #2E3A59;
+  --shadow-print: none;
   --letterbox: #1A1819;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="dusk"] .pc-slide[data-surface="alt"] {
@@ -459,6 +470,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #2E3A59;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="dusk"] .pc-slide[data-surface="accent"] {
   --bg: #2E3A59;
@@ -491,6 +503,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="dusk"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -525,6 +538,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A6B4D8;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"]:is([data-mode="light"], :not([data-mode]))[data-palette="dusk"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -559,6 +573,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #2E3A59;
+  --shadow-print: none;
 }
 /* Sage, dark */
 .pc-deck[data-theme="wedding"][data-mode="dark"]:is([data-palette="sage"], :not([data-palette])) {
@@ -594,6 +609,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A7C4A9;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"]:is([data-palette="sage"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -628,6 +644,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A7C4A9;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"]:is([data-palette="sage"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #A7C4A9;
@@ -660,6 +677,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #2C2A2B;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"]:is([data-palette="sage"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -694,6 +712,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #4E6B52;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"]:is([data-palette="sage"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -728,6 +747,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A7C4A9;
+  --shadow-print: none;
 }
 /* Rose, dark */
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="rose"] {
@@ -763,6 +783,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E8A3B6;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="rose"] .pc-slide[data-surface="alt"] {
@@ -797,6 +818,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E8A3B6;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="rose"] .pc-slide[data-surface="accent"] {
   --bg: #E8A3B6;
@@ -829,6 +851,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #2C2A2B;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="rose"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -863,6 +886,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #A35069;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="rose"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -897,6 +921,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E8A3B6;
+  --shadow-print: none;
 }
 /* Dusk, dark */
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="dusk"] {
@@ -932,6 +957,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A6B4D8;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="dusk"] .pc-slide[data-surface="alt"] {
@@ -966,6 +992,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A6B4D8;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="dusk"] .pc-slide[data-surface="accent"] {
   --bg: #A6B4D8;
@@ -998,6 +1025,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #2C2A2B;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="dusk"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1032,6 +1060,7 @@
   --code-s: #9ad48b;
   --code-c: #88929f;
   --mark: #2E3A59;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="wedding"][data-mode="dark"][data-palette="dusk"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1066,4 +1095,5 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #A6B4D8;
+  --shadow-print: none;
 }

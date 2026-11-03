@@ -83,6 +83,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #C8432A;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
   --letterbox: #1A1A1A;
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode])):is([data-palette="tomato"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -117,6 +118,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #C8432A;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode])):is([data-palette="tomato"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #C8432A;
@@ -149,6 +151,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode])):is([data-palette="tomato"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -183,6 +186,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F07A5E;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode])):is([data-palette="tomato"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -217,6 +221,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #C8432A;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
 }
 /* Mustard, light */
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="mustard"] {
@@ -252,6 +257,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #9A6A00;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
   --letterbox: #1A1A1A;
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="mustard"] .pc-slide[data-surface="alt"] {
@@ -286,6 +292,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #9A6A00;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="mustard"] .pc-slide[data-surface="accent"] {
   --bg: #9A6A00;
@@ -318,6 +325,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="mustard"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -352,6 +360,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F3A712;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="mustard"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -386,6 +395,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #9A6A00;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
 }
 /* Ink, light */
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="ink"] {
@@ -421,6 +431,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #29335C;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
   --letterbox: #1A1A1A;
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="ink"] .pc-slide[data-surface="alt"] {
@@ -455,6 +466,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #29335C;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="ink"] .pc-slide[data-surface="accent"] {
   --bg: #29335C;
@@ -487,6 +499,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="ink"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -521,6 +534,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #9AA8E0;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="collage"]:is([data-mode="light"], :not([data-mode]))[data-palette="ink"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -555,6 +569,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #29335C;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
 }
 /* Tomato, dark */
 .pc-deck[data-theme="collage"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) {
@@ -590,6 +605,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F07A5E;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
   --letterbox: #000000;
 }
 .pc-deck[data-theme="collage"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -624,6 +640,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F07A5E;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="collage"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #F07A5E;
@@ -656,6 +673,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #2B2B2B;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="collage"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -690,6 +708,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #C8432A;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
 }
 .pc-deck[data-theme="collage"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -724,6 +743,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F07A5E;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
 }
 /* Mustard, dark */
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="mustard"] {
@@ -759,6 +779,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F3A712;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
   --letterbox: #000000;
 }
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="mustard"] .pc-slide[data-surface="alt"] {
@@ -793,6 +814,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F3A712;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="mustard"] .pc-slide[data-surface="accent"] {
   --bg: #F3A712;
@@ -825,6 +847,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #2B2B2B;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="mustard"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -859,6 +882,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #9A6A00;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
 }
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="mustard"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -893,6 +917,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F3A712;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
 }
 /* Ink, dark */
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="ink"] {
@@ -928,6 +953,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #9AA8E0;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
   --letterbox: #000000;
 }
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="ink"] .pc-slide[data-surface="alt"] {
@@ -962,6 +988,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #9AA8E0;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="ink"] .pc-slide[data-surface="accent"] {
   --bg: #9AA8E0;
@@ -994,6 +1021,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #2B2B2B;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="ink"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1028,6 +1056,7 @@
   --code-s: #9ad48b;
   --code-c: #89929f;
   --mark: #29335C;
+  --shadow-print: 3px 4px 0 rgba(43, 43, 43, .18);
 }
 .pc-deck[data-theme="collage"][data-mode="dark"][data-palette="ink"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1062,4 +1091,5 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #9AA8E0;
+  --shadow-print: 3px 4px 0 rgba(0, 0, 0, .35);
 }

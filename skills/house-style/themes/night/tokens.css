@@ -79,6 +79,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #a5670f;
+  --shadow-print: none;
   --letterbox: #0A0A0A;
 }
 .pc-deck[data-theme="night"][data-mode="light"]:is([data-palette="amber"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -113,6 +114,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #a5670f;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"][data-mode="light"]:is([data-palette="amber"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #a5670f;
@@ -145,6 +147,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"][data-mode="light"]:is([data-palette="amber"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -179,6 +182,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E7AD52;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"][data-mode="light"]:is([data-palette="amber"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -213,6 +217,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #a5670f;
+  --shadow-print: none;
 }
 /* Ember, light */
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ember"] {
@@ -248,6 +253,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #C2410C;
+  --shadow-print: none;
   --letterbox: #0A0A0A;
 }
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ember"] .pc-slide[data-surface="alt"] {
@@ -282,6 +288,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #C2410C;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ember"] .pc-slide[data-surface="accent"] {
   --bg: #C2410C;
@@ -314,6 +321,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ember"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -348,6 +356,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF7F50;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ember"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -382,6 +391,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #C2410C;
+  --shadow-print: none;
 }
 /* Ice, light */
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ice"] {
@@ -417,6 +427,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1C6EA4;
+  --shadow-print: none;
   --letterbox: #0A0A0A;
 }
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ice"] .pc-slide[data-surface="alt"] {
@@ -451,6 +462,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1C6EA4;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ice"] .pc-slide[data-surface="accent"] {
   --bg: #1C6EA4;
@@ -483,6 +495,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ice"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -517,6 +530,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #7FC4F0;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"][data-mode="light"][data-palette="ice"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -551,6 +565,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1C6EA4;
+  --shadow-print: none;
 }
 /* Amber, dark */
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="amber"], :not([data-palette])) {
@@ -586,6 +601,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E7AD52;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="amber"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -620,6 +636,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E7AD52;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="amber"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #E7AD52;
@@ -652,6 +669,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #111111;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="amber"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -686,6 +704,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #a5670f;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode])):is([data-palette="amber"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -720,6 +739,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E7AD52;
+  --shadow-print: none;
 }
 /* Ember, dark */
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ember"] {
@@ -755,6 +775,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF7F50;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ember"] .pc-slide[data-surface="alt"] {
@@ -789,6 +810,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF7F50;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ember"] .pc-slide[data-surface="accent"] {
   --bg: #FF7F50;
@@ -821,6 +843,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #111111;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ember"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -855,6 +878,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #C2410C;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ember"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -889,6 +913,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF7F50;
+  --shadow-print: none;
 }
 /* Ice, dark */
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ice"] {
@@ -924,6 +949,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #7FC4F0;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ice"] .pc-slide[data-surface="alt"] {
@@ -958,6 +984,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #7FC4F0;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ice"] .pc-slide[data-surface="accent"] {
   --bg: #7FC4F0;
@@ -990,6 +1017,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #111111;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ice"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1024,6 +1052,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1C6EA4;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="night"]:is([data-mode="dark"], :not([data-mode]))[data-palette="ice"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1058,4 +1087,5 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #7FC4F0;
+  --shadow-print: none;
 }

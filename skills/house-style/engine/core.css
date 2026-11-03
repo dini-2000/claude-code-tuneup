@@ -25,7 +25,7 @@
   --lh-display: 1.02; --lh-h1: 1.1; --lh-body: 1.4;
   --k-hero: 1; --k-h1: 1; --k-body: 1; --k-stat: 1; --k-statement: 1;
   --radius: 14px; --radius-sm: 8px; --border-w: 2px;
-  --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 10px 28px rgba(16, 24, 40, .08);
+  --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 10px 28px rgba(16, 24, 40, .08); --shadow-print: 0 0 0 0 transparent;
   --card-pad: 36px; --card-border-w: 1px;
   --ease: cubic-bezier(.2, .7, .2, 1); --dur: 400ms; --dur-draw: 700ms; --rise: 24px; --stagger: 60ms;
   --icon-stroke: 2; --letterbox: #0b0c0f;
@@ -104,6 +104,12 @@ body:has(> .pc-deck) { background: var(--letterbox, #0b0c0f); overflow: hidden; 
   .pc-deck .pc-slide [data-build="draw"] :is(.ch-bar, .ch-hbar) { transform: none !important; }
   .pc-deck .pc-slide [data-build="draw"] .ch-draw { stroke-dashoffset: 0 !important; }
   .pc-deck .pc-slide [data-build="draw"] .ch-lab { opacity: 1 !important; }
+  /* Chrome prints a blurred shadow as a soft mask, which Preview and Quick Look on Apple devices draw as a solid box
+     (26 Oct 2026), so print keeps only shadows without blur: --shadow-print is the theme's --shadow less its blurred
+     layers (tools/build_themes.py) */
+  * { --shadow: var(--shadow-print) !important; }
+  .pc-bleed :is(.pc-kicker, .pc-title, .pc-sub, .pc-lead, p) { text-shadow: none !important; }
+  .pc-pin { box-shadow: 0 0 0 5px var(--bg) !important; }
 }
 
 /* ---------- 4. Slide anatomy ---------- */

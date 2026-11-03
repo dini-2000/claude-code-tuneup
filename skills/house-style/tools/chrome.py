@@ -141,9 +141,10 @@ def _print_pdf(src_html, pdf_path, expect=None, timeout=180, head='', outline=Fa
             args += ['--print-to-pdf=%s' % pdf_path, tmp.as_uri()]
             kw = {'start_new_session': True} if os.name == 'posix' else {}
             proc = subprocess.Popen(args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **kw)
-            t0, last, stable = time.time(), -1, 0
+            # monotonic: it stops while the Mac sleeps, so a print that spans a sleep is not cut off
+            t0, last, stable = time.monotonic(), -1, 0
             try:
-                while time.time() - t0 < timeout:
+                while time.monotonic() - t0 < timeout:
                     done = proc.poll() is not None
                     size = os.path.getsize(pdf_path) if pdf_path.exists() else -1
                     stable = stable + 1 if size > 0 and size == last else 0
@@ -249,9 +250,9 @@ def _print_pdf_wait(src_html, pdf_path, wait, head='', tail='', outline=False, t
             kw = {'start_new_session': True} if os.name == 'posix' else {}
             proc = subprocess.Popen(args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **kw)
             try:
-                port_file, t0 = Path(prof) / 'DevToolsActivePort', time.time()
+                port_file, t0 = Path(prof) / 'DevToolsActivePort', time.monotonic()
                 while not (port_file.exists() and len(port_file.read_text().split()) >= 2):
-                    if time.time() - t0 > 30 or proc.poll() is not None:
+                    if time.monotonic() - t0 > 30 or proc.poll() is not None:
                         sys.exit('Chrome did not open its DevTools port')
                     time.sleep(0.1)
                 port, path = port_file.read_text().split()[:2]
@@ -264,13 +265,13 @@ def _print_pdf_wait(src_html, pdf_path, wait, head='', tail='', outline=False, t
                 expr = ('new Promise(function (ok) { var go = function () { Promise.resolve(%s).then(function () { ok(true); }, '
                         'function (e) { (window.__pcErrs = window.__pcErrs || []).push(String(e)); ok(false); }); }; '
                         'document.readyState === "complete" ? go() : addEventListener("load", go); })' % wait)
-                t0 = time.time()
+                t0 = time.monotonic()
                 while True:
                     try:
                         r = cdp.call('Runtime.evaluate', session=sid, expression=expr, awaitPromise=True, returnByValue=True)
                         break
                     except RuntimeError:
-                        if time.time() - t0 > timeout:
+                        if time.monotonic() - t0 > timeout:
                             raise
                         time.sleep(0.2)   # the page was still navigating
                 pdf = cdp.call('Page.printToPDF', session=sid, printBackground=True, preferCSSPageSize=True,
@@ -326,17 +327,60 @@ def fix_masks(pdf_path):
     return n
 
 
+def soft_masks(pdf_path):
+    """Pages of a print that hold luminosity soft masks, as {page number: count}. Chrome prints a blurred shadow
+    (box-shadow, inset or not, or text-shadow with blur) this way, and Quartz (Preview, Quick Look) draws such a mask
+    in the wrong place: a solid box behind a card, a shadow cut off partway (26 Oct 2026). Shadows without blur,
+    opacity, filters and pictures with transparency print without one."""
+    import fitz
+
+    def refs(d, x, path):
+        kind, val = d.xref_get_key(x, path)
+        if kind == 'xref':
+            val = d.xref_object(int(val.split()[0]), compressed=True)
+        return [int(r) for r in re.findall(r'(\d+) 0 R', val)] if kind in ('dict', 'xref') else []
+
+    def count(d, x, seen):
+        n = 0
+        for gs in refs(d, x, 'Resources/ExtGState'):
+            if gs not in seen:
+                seen.add(gs)
+                n += d.xref_get_key(gs, 'SMask/S')[1] == '/Luminosity'
+        for form in refs(d, x, 'Resources/XObject'):
+            if form not in seen and d.xref_get_key(form, 'Subtype')[1] == '/Form':
+                seen.add(form)
+                n += count(d, form, seen)
+        return n
+    with fitz.open(pdf_path) as d:
+        found = {i + 1: count(d, p.xref, set()) for i, p in enumerate(d)}
+    return {n: k for n, k in found.items() if k}
+
+
+def warn_soft_masks(pdf_path):
+    """Say which pages hold blurred shadows (soft_masks), which the print CSS should have left out."""
+    found = soft_masks(pdf_path)
+    if found:
+        print('Warning, PDF: page(s) %s: %d blurred shadow(s) that Preview and Quick Look draw as a solid box. In '
+              '@media print, give box-shadow and text-shadow no blur, or none' %
+              (', '.join(map(str, found)), sum(found.values())))
+    return found
+
+
 def print_pdf(src_html, pdf_path, expect=None, timeout=180, head='', outline=False):
-    """Print with headless Chrome (see _print_pdf), then fix its masks for every PDF reader."""
+    """Print with headless Chrome (see _print_pdf), then fix its masks for every PDF reader and warn of blurred
+    shadows."""
     out = _print_pdf(src_html, pdf_path, expect, timeout, head, outline)
     fix_masks(out)
+    warn_soft_masks(out)
     return out
 
 
 def print_pdf_wait(src_html, pdf_path, wait, head='', tail='', outline=False, timeout=240):
-    """Print once the page's `wait` promise resolves (see _print_pdf_wait), then fix its masks."""
+    """Print once the page's `wait` promise resolves (see _print_pdf_wait), then fix its masks and warn of blurred
+    shadows."""
     out = _print_pdf_wait(src_html, pdf_path, wait, head, tail, outline, timeout)
     fix_masks(out)
+    warn_soft_masks(out)
     return out
 
 

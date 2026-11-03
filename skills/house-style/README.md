@@ -225,9 +225,13 @@ copy.
 
 ## Known limits
 - Sinhala and Tamil: basic support only. Decks with either script need the extra checks in SKILL.md.
-- Google Slides shows PowerPoints in Arial; the layout holds, the type differs. Share the PDF for an exact copy.
+- Google Slides ignores fonts embedded in a PowerPoint: it shows a deck's Google font where it has that family and
+  Arial where it does not. The layout holds. Share the PDF for an exact copy.
 - Complex motion is for the screen; its PDF and PowerPoint show finished slides.
 - Videos play in the HTML only; PDF and PowerPoint show the poster frame.
+- PDFs keep only shadows without blur: Preview and Quick Look on Apple devices draw a blurred one, as Chrome prints
+  it, as a solid grey box, and every print warns of any left. Soft shadows on screen become a hairline ring or
+  nothing in print. A gradient that fades to transparent can look flatter in Preview.
 - Documents are PDFs: there is no Word copy. Page numbers count from the cover (no roman front matter).
 - Press files follow PDF/X-4, but no free validator certifies them: the print shop's preflight has the last word.
 

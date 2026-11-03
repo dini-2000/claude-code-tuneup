@@ -81,6 +81,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
   --letterbox: #141414;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode])):is([data-palette="tomato"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -123,6 +124,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode])):is([data-palette="tomato"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #FF5A3C;
@@ -163,6 +165,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode])):is([data-palette="tomato"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -205,6 +208,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode])):is([data-palette="tomato"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -247,6 +251,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 /* Cobalt, light */
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="cobalt"] {
@@ -290,6 +295,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
   --letterbox: #141414;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="cobalt"] .pc-slide[data-surface="alt"] {
@@ -332,6 +338,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="cobalt"] .pc-slide[data-surface="accent"] {
   --bg: #2D5BFF;
@@ -372,6 +379,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="cobalt"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -414,6 +422,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="cobalt"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -456,6 +465,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 /* Mint, light */
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="mint"] {
@@ -499,6 +509,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
   --letterbox: #141414;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="mint"] .pc-slide[data-surface="alt"] {
@@ -541,6 +552,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="mint"] .pc-slide[data-surface="accent"] {
   --bg: #3DDC97;
@@ -581,6 +593,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="mint"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -623,6 +636,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="mint"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -665,6 +679,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 /* Lilac, light */
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="lilac"] {
@@ -708,6 +723,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
   --letterbox: #141414;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="lilac"] .pc-slide[data-surface="alt"] {
@@ -750,6 +766,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="lilac"] .pc-slide[data-surface="accent"] {
   --bg: #B69CFF;
@@ -790,6 +807,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="lilac"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -832,6 +850,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"]:is([data-mode="light"], :not([data-mode]))[data-palette="lilac"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -874,6 +893,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 /* Tomato, dark */
 .pc-deck[data-theme="pop"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) {
@@ -917,6 +937,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -959,6 +980,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #FF6B4F;
@@ -999,6 +1021,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1041,6 +1064,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"]:is([data-palette="tomato"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1083,6 +1107,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 /* Cobalt, dark */
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="cobalt"] {
@@ -1126,6 +1151,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="cobalt"] .pc-slide[data-surface="alt"] {
@@ -1168,6 +1194,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="cobalt"] .pc-slide[data-surface="accent"] {
   --bg: #6B8BFF;
@@ -1208,6 +1235,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="cobalt"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1250,6 +1278,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="cobalt"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1292,6 +1321,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 /* Mint, dark */
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="mint"] {
@@ -1335,6 +1365,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="mint"] .pc-slide[data-surface="alt"] {
@@ -1377,6 +1408,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="mint"] .pc-slide[data-surface="accent"] {
   --bg: #3DDC97;
@@ -1417,6 +1449,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="mint"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1459,6 +1492,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="mint"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1501,6 +1535,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 /* Lilac, dark */
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="lilac"] {
@@ -1544,6 +1579,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="lilac"] .pc-slide[data-surface="alt"] {
@@ -1586,6 +1622,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="lilac"] .pc-slide[data-surface="accent"] {
   --bg: #B69CFF;
@@ -1626,6 +1663,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="lilac"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1668,6 +1706,7 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="pop"][data-mode="dark"][data-palette="lilac"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1710,4 +1749,5 @@
   --pop-5: #B69CFF;
   --pop-6: #FF8FC7;
   --pop-ink: #141414;
+  --shadow-print: none;
 }

@@ -81,6 +81,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #C8501E;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
   --letterbox: #1E120B;
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode])):is([data-palette="sunset"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -115,6 +116,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #C8501E;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode])):is([data-palette="sunset"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #C8501E;
@@ -147,6 +149,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode])):is([data-palette="sunset"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -181,6 +184,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F08A4B;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode])):is([data-palette="sunset"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -215,6 +219,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #C8501E;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
 }
 /* Avocado, light */
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="avocado"] {
@@ -250,6 +255,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #5E7A2A;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
   --letterbox: #1E120B;
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="avocado"] .pc-slide[data-surface="alt"] {
@@ -284,6 +290,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #5E7A2A;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="avocado"] .pc-slide[data-surface="accent"] {
   --bg: #5E7A2A;
@@ -316,6 +323,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="avocado"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -350,6 +358,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B5CC6A;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="avocado"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -384,6 +393,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #5E7A2A;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
 }
 /* Disco, light */
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="disco"] {
@@ -419,6 +429,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #8E3B5A;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
   --letterbox: #1E120B;
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="disco"] .pc-slide[data-surface="alt"] {
@@ -453,6 +464,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #8E3B5A;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="disco"] .pc-slide[data-surface="accent"] {
   --bg: #8E3B5A;
@@ -485,6 +497,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="disco"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -519,6 +532,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E58BB0;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"]:is([data-mode="light"], :not([data-mode]))[data-palette="disco"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -553,6 +567,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #8E3B5A;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
 }
 /* Sunset, dark */
 .pc-deck[data-theme="seventies"][data-mode="dark"]:is([data-palette="sunset"], :not([data-palette])) {
@@ -588,6 +603,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F08A4B;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"]:is([data-palette="sunset"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -622,6 +638,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F08A4B;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"]:is([data-palette="sunset"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #F08A4B;
@@ -654,6 +671,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #3A2418;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"]:is([data-palette="sunset"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -688,6 +706,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #C8501E;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"]:is([data-palette="sunset"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -722,6 +741,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #F08A4B;
+  --shadow-print: none;
 }
 /* Avocado, dark */
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="avocado"] {
@@ -757,6 +777,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B5CC6A;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="avocado"] .pc-slide[data-surface="alt"] {
@@ -791,6 +812,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B5CC6A;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="avocado"] .pc-slide[data-surface="accent"] {
   --bg: #B5CC6A;
@@ -823,6 +845,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #3A2418;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="avocado"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -857,6 +880,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #5E7A2A;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="avocado"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -891,6 +915,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B5CC6A;
+  --shadow-print: none;
 }
 /* Disco, dark */
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="disco"] {
@@ -926,6 +951,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E58BB0;
+  --shadow-print: none;
   --letterbox: #000000;
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="disco"] .pc-slide[data-surface="alt"] {
@@ -960,6 +986,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E58BB0;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="disco"] .pc-slide[data-surface="accent"] {
   --bg: #E58BB0;
@@ -992,6 +1019,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #3A2418;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="disco"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1026,6 +1054,7 @@
   --code-s: #9ad48b;
   --code-c: #87909d;
   --mark: #8E3B5A;
+  --shadow-print: 0 2px 0 rgba(58, 36, 24, .12);
 }
 .pc-deck[data-theme="seventies"][data-mode="dark"][data-palette="disco"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1060,4 +1089,5 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #E58BB0;
+  --shadow-print: none;
 }

@@ -75,6 +75,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #ef5f18;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
   --letterbox: #11132A;
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode])):is([data-palette="rainbow"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -109,6 +110,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #ef5f18;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode])):is([data-palette="rainbow"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #ef5f18;
@@ -141,6 +143,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #1F2340;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode])):is([data-palette="rainbow"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -175,6 +178,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF922B;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode])):is([data-palette="rainbow"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -209,6 +213,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #ef5f18;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
 }
 /* Grape, light */
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="grape"] {
@@ -244,6 +249,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #7048E8;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
   --letterbox: #11132A;
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="grape"] .pc-slide[data-surface="alt"] {
@@ -278,6 +284,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #7048E8;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="grape"] .pc-slide[data-surface="accent"] {
   --bg: #7048E8;
@@ -310,6 +317,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #ffffff;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="grape"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -344,6 +352,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B197FC;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="grape"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -378,6 +387,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #7048E8;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
 }
 /* Meadow, light */
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="meadow"] {
@@ -413,6 +423,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #32a146;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
   --letterbox: #11132A;
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="meadow"] .pc-slide[data-surface="alt"] {
@@ -447,6 +458,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #32a146;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="meadow"] .pc-slide[data-surface="accent"] {
   --bg: #32a146;
@@ -479,6 +491,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #1F2340;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="meadow"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: dark;
@@ -513,6 +526,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #8CE99A;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="crayon"]:is([data-mode="light"], :not([data-mode]))[data-palette="meadow"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: light;
@@ -547,6 +561,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #32a146;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
 }
 /* Rainbow, dark */
 .pc-deck[data-theme="crayon"][data-mode="dark"]:is([data-palette="rainbow"], :not([data-palette])) {
@@ -582,6 +597,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF922B;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
   --letterbox: #000000;
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"]:is([data-palette="rainbow"], :not([data-palette])) .pc-slide[data-surface="alt"] {
@@ -616,6 +632,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF922B;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"]:is([data-palette="rainbow"], :not([data-palette])) .pc-slide[data-surface="accent"] {
   --bg: #FF922B;
@@ -648,6 +665,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1F2340;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"]:is([data-palette="rainbow"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -682,6 +700,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #ef5f18;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"]:is([data-palette="rainbow"], :not([data-palette])) :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -716,6 +735,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #FF922B;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
 }
 /* Grape, dark */
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="grape"] {
@@ -751,6 +771,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B197FC;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
   --letterbox: #000000;
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="grape"] .pc-slide[data-surface="alt"] {
@@ -785,6 +806,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B197FC;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="grape"] .pc-slide[data-surface="accent"] {
   --bg: #B197FC;
@@ -817,6 +839,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1F2340;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="grape"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -851,6 +874,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #7048E8;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="grape"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -885,6 +909,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #B197FC;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
 }
 /* Meadow, dark */
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="meadow"] {
@@ -920,6 +945,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #8CE99A;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
   --letterbox: #000000;
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="meadow"] .pc-slide[data-surface="alt"] {
@@ -954,6 +980,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #8CE99A;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="meadow"] .pc-slide[data-surface="accent"] {
   --bg: #8CE99A;
@@ -986,6 +1013,7 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #1F2340;
+  --shadow-print: none;
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="meadow"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) {
   color-scheme: light;
@@ -1020,6 +1048,7 @@
   --code-s: #9ad48b;
   --code-c: #838c9a;
   --mark: #32a146;
+  --shadow-print: 0 4px 0 rgba(31, 35, 64, .12);
 }
 .pc-deck[data-theme="crayon"][data-mode="dark"][data-palette="meadow"] :is(.pc-slide[data-surface="inverse"], .pc-inverse) .pc-inverse {
   color-scheme: dark;
@@ -1054,4 +1083,5 @@
   --code-s: #9ad48b;
   --code-c: #7c8592;
   --mark: #8CE99A;
+  --shadow-print: 0 4px 0 rgba(0, 0, 0, .35);
 }

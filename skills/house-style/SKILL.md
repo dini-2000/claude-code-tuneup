@@ -162,6 +162,11 @@ A clean check is necessary, not sufficient: look at every slide, page and design
   Look at every page at full size where text is small.
 - **Graphic**: `python3 tools/qc.py "<graphic>.html" --formats <format> -o <out>` runs the deck checks on it; then
   export (step 4) and look at every PNG at its real size.
+- **Every PDF**: the tools warn of a shadow with blur that reaches a PDF ("Warning, PDF: ... blurred shadow(s)"),
+  since Preview and Quick Look on Apple devices draw it as a solid grey box. The engine and the themes print shadows
+  without blur (`--shadow-print`, a theme's `--shadow` less its blurred layers, made by `tools/build_themes.py`), so
+  in your own CSS give shadows no blur under `@media print`, or none. A gradient that fades to transparent can look
+  flatter in Preview too: on a Mac, look at the PDF there.
 
 ## 4. Share
 For a deck, ask which files the person wants, with the first option recommended: **HTML, PowerPoint and PDF**

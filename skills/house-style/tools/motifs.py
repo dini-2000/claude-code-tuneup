@@ -594,6 +594,9 @@ CARDS = {
     'soft': ['box-shadow: 0 12px 34px rgba(0, 0, 0, .12)', 'border: 0'],
     'flat': ['box-shadow: none', 'border: 0', 'background: var(--surface-2)'],
 }
+CARDS_PRINT = {   # Chrome prints a blurred shadow as a soft mask, which Preview and Quick Look draw as a solid box (core.css, print): a ring in its place
+    'soft': ['box-shadow: 0 0 0 1px var(--line)'],
+}
 
 
 def recipe_css(theme):
@@ -637,6 +640,8 @@ def _recipe_css(theme):
                                                       'background: var(--accent)', 'vertical-align: .3em', 'margin-right: .55em']))
     if art.get('cards') in CARDS:
         a.append(rule('%s .pc-card:not(.pc-card--flat)' % deck, CARDS[art['cards']]))
+        if art['cards'] in CARDS_PRINT:
+            a.append('@media print {\n%s\n}' % rule('%s .pc-card:not(.pc-card--flat)' % deck, CARDS_PRINT[art['cards']]))
     b = [head.replace('art from', 'document art from')]
     dart = art.get('doc') or {}
     for slot in ('cover', 'opener'):

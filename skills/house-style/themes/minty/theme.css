@@ -163,3 +163,7 @@
 .pc-deck[data-theme="minty"] .pc-card:not(.pc-card--flat) {
   box-shadow: 0 12px 34px rgba(0, 0, 0, .12);
   border: 0; }
+@media print {
+.pc-deck[data-theme="minty"] .pc-card:not(.pc-card--flat) {
+  box-shadow: 0 0 0 1px var(--line); }
+}
