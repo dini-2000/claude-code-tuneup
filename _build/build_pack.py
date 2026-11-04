@@ -468,6 +468,19 @@ def validate(root):
     return {r["dir"]: re.sub(r"\s+", " ", r.get("description") or "").strip() for r in res}, bad
 
 
+def discard(paths, note):
+    """Put paths in the Trash as one folder; returns its name. A local_trash.py beside this script (this machine's own Trash
+    tool, never written to the repo) does it where there is one; elsewhere the paths go into one dated folder in ~/.Trash."""
+    if os.path.isfile(os.path.join(HERE, "local_trash.py")):
+        sys.path.insert(0, HERE)
+        from local_trash import discard as local
+        return local(paths, note)
+    folder = os.path.join(os.path.expanduser("~/.Trash"), "build_pack-" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
+    os.makedirs(folder)
+    for p in paths: shutil.move(p, folder)
+    return os.path.basename(folder)
+
+
 def sync():
     """--sync: reinstall only the custom/, private/ and WHOLE skills, then rewrite the router from the whole install, so a fact
     update needs neither the pack nor a full build. The repo is untouched: a custom/ change still needs --repo and a commit."""
@@ -479,11 +492,11 @@ def sync():
     for d in whole: stage_skill(os.path.join(VENDOR, d), WHOLE[d][0], d, stage, final)
     bad = validate(stage)[1]
     if bad: sys.exit(f"not syncing: {bad}")
-    stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-    for d in custom + private + whole:
-        live = os.path.join(DEST, d)
-        if os.path.exists(live): shutil.move(live, os.path.join(os.path.expanduser("~/.Trash"), f"{d}-{stamp}"))
-        shutil.copytree(os.path.join(stage, d), live)
+    old = [os.path.join(DEST, d) for d in custom + private + whole if os.path.exists(os.path.join(DEST, d))]
+    if old:  # one Trash folder for the whole sync
+        try: print("old copies put in the Trash as", discard(old, f"the {len(old)} skill folders build_pack.py --sync replaced"))
+        except RuntimeError as e: print("warning:", e)  # out of the install all the same, so the new copies still go in
+    for d in custom + private + whole: shutil.copytree(os.path.join(stage, d), os.path.join(DEST, d))
     vendored = [d for d in sorted(os.listdir(VENDOR)) if os.path.isdir(os.path.join(VENDOR, d)) and d not in custom + private + whole] if os.path.isdir(VENDOR) else []
     for d in vendored:  # files only added or replaced; a file dropped from vendor/ stays installed until a full build
         assert os.path.isdir(os.path.join(DEST, d)), f"vendor/{d}: no installed skill of that name"
