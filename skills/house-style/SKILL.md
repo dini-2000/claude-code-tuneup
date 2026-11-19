@@ -23,7 +23,7 @@ Run the tools from this kit folder and give files by their full path. On Windows
 ## First use
 The first time the kit is used on a computer (no file named `.first-use-done` in this kit folder, the folder this
 file is in), give the person the welcome below before any work, in these words or close to them, then set the kit
-up as the steps after it say. When both are done, create that empty file so later chats skip them; if the folder
+up as the steps after it say. When both are done, create that file, holding the answer from step 4, so later chats skip them; if the folder
 cannot be written to, give the welcome once in each chat. Give the welcome again whenever someone asks what the kit
 can do. If the person asked for something, start on it once the set-up is done.
 
@@ -32,7 +32,7 @@ can do. If the person asked for something, start on it once the set-up is done.
 >   also opens in Google Slides. Slides can carry charts, key figures, timelines, maps, flags, QR codes, code and
 >   speaker notes, with motion in the HTML deck if you want it.
 > - **Documents**: reports, papers, proposals, guides, letters, memos, CVs, invoices, newsletters, one-pagers,
->   agendas and event programmes, as PDFs ready to print.
+>   agendas and event programmes, as PDFs ready to print, with an editable Word copy if you want one.
 > - **Graphics**: social posts, stories, banners, link previews, flyers, posters, invitations, business cards and
 >   certificates, as PNG, JPG or a print shop's PDF.
 >
@@ -45,21 +45,22 @@ can do. If the person asked for something, start on it once the set-up is done.
 >
 > First I set a few things up, once, and ask before I install or change anything. I need:
 > - **Tools to make the files**: Python packages and Google Chrome.
-> - **LibreOffice**, to test every line of each PowerPoint against the deck.
-> - **PowerPoint**, on a Mac, to check each deck in PowerPoint itself. No Office licence is needed for this.
+> - **LibreOffice**, to test every PowerPoint and Word file against the original.
 > - **The kit saved**, so it is here in every chat.
 >
-> Optional: **Google Slides**, if your decks go to people who open them there. For Slides you add Claude in Chrome,
-> the browser extension, to a Chrome signed in to your Google account; I upload each deck to one folder of your
-> Drive, "Deck checks", and leave the rest of your Drive alone.
+> Then I ask where your files get opened, and set up checks for those places only:
+> - **Microsoft Office**: on a Mac, I check each deck in PowerPoint itself (no Office licence needed), and each Word
+>   copy in Word if your Word is activated.
+> - **Google Slides and Docs**: you connect me to your Google Drive once. I upload a test copy of each file to one
+>   folder there, "House Style checks", delete it when the check is done, and leave the rest of your Drive alone.
 >
 > If something can't be set up, I tell you which check your work loses. Then tell me what you need. I choose a look
 > that suits each piece and name it when I deliver, unless you want to pick a theme yourself or have me design
 > something new.
 
 Set-up, the first time. Go through the steps in order. Ask before installing anything or changing a setting, and
-explain each step in a line. Steps 1 to 4 are needed for a good result (step 4 on a Mac only). Step 5 is optional:
-offer it in a question of its own. If the person cannot or will not do a step, say in a line which check their work loses, and do the
+explain each step in a line. Steps 1 to 3 are needed for a good result. Step 4 asks where the person's files get opened, and steps 5 and 6
+set up the checks for those places only. If the person cannot or will not do a step, say in a line which check their work loses, and do the
 step later if they ask.
 
 1. Run `python3 tools/setup_check.py`. It lists what the tools need and what is missing, with the command or link
@@ -75,14 +76,22 @@ step later if they ask.
 3. Run `python3 tools/selftest.py --quick -o <a scratch folder>` (a few minutes) and look at its `overview.png`. It
    builds and checks one theme in every format, an outline deck, its PowerPoint and graphics, so a fault on this
    computer shows before real work.
-4. PowerPoint's permission, on a Mac. Run `python3 tools/to_pptx.py samples/showcase.html -o <a scratch
-   folder>/showcase.pptx --check --powerpoint`. The first run asks the person to let the app control PowerPoint and, in PowerPoint, to click Grant Access for the
-   kit's `tools/powerpoint-check` folder; both are needed once.
-5. Google Slides, through Claude in Chrome. The person adds the Claude in Chrome extension to Chrome, connects it to
-   Claude, and signs that Chrome in to their Google account. Check that the browser tools answer and which Google
-   account Drive shows, then create the folder "Deck checks" in their Drive. The Google Drive connector cannot do
-   this check, since it passes files through the chat and a deck is far too large; if it is connected, it can still
-   find, read and clear the copies in that folder.
+4. Ask, in one multiple-choice question, where the person's files get opened: Microsoft Office (PowerPoint and Word),
+   Google (Slides, Docs and Sheets), both, or not sure yet. Write the answer in `.first-use-done` as one line, for
+   example `Files open in: Microsoft Office, Google`, so later chats run the same checks. "Not sure yet" sets up
+   neither for now: the work gets LibreOffice's tests, and the question comes back when a file is headed somewhere.
+   A piece headed elsewhere ("this one goes to Drive") gets that place's check too.
+5. Microsoft Office, on a Mac. Run `python3 tools/to_pptx.py samples/showcase.html -o <a scratch
+   folder>/showcase.pptx --check --powerpoint`. The first run asks the person to let the app control PowerPoint and,
+   in PowerPoint, to click Grant Access for the kit's `tools/powerpoint-check` folder; both are needed once, and no
+   Office licence is needed. Word checks a Word copy only when it is activated (`tools/doc_to_docx.py --word` asks
+   for Grant Access to `tools/word-check` the same way). On Windows neither check can run: say so.
+6. Google, through the Google Drive connector. Ask the person to connect Claude to Google Drive (Claude's settings,
+   Connectors) with the Google account their files go to. Check that the connector answers and which account it
+   shows, then create the folder "House Style checks" in their Drive (`create_file` with contentMimeType
+   `application/vnd.google-apps.folder`) and save its id, alone, in `.drive-check-folder` in this kit folder, where
+   `tools/drive_qc.py` finds it. Every check uploads its file into that folder by file reference, so the file never
+   passes through the chat, and moves the copy to the Drive's trash when it is done. Touch nothing else in the Drive.
 
 Then say in one line what is ready and which checks the work will get (for example, LibreOffice and PowerPoint, but
 not Google Slides).
@@ -160,6 +169,23 @@ A clean check is necessary, not sufficient: look at every slide, page and design
   `<folder>/dist/<name>.html` and prints it, then `python3 tools/qc_doc.py "<folder>/dist/<name>.html" <pdf>` checks the HTML and the PDF (blank pages, headings stranded at a page
   foot, fonts, links, anything wider than the text column, a nearly empty last page) and draws a contact sheet.
   Look at every page at full size where text is small.
+- **Word copy**, when the user wants to edit the text: `python3 tools/doc_to_docx.py "<folder>/dist/<name>.html"
+  --built --check` writes `<name>.docx` beside the build with the theme's fonts embedded and checks it against the
+  kit PDF in LibreOffice: page counts, how each page starts, the cover's lines, words missing and added, and
+  `<name> check/libreoffice side by side.pdf`: look at every page of it. Chart labels count as missing words, since
+  charts become pictures. Where files open in Microsoft Office, `--word` adds Word's own PDF on a Mac with an
+  activated Word.
+- **Google Docs, Slides or Sheets**, where files open in Google (First use, step 4) or the file is headed there:
+  `python3 tools/drive_qc.py prepare "<file>"` (a .docx, .pptx or .xlsx) prints three connector steps: upload the
+  file by reference into the checks folder (its bytes never pass through the chat), export Google's PDF, and move
+  the upload to the Drive's trash, always. The `compare` line it prints then reports pages or slides that start or
+  end differently, lines moved over 12 pt, fonts the file names that Google never shows, every font Google swapped,
+  pictures and words, and writes `google side by side.pdf`: look at every page. For a Word copy,
+  `doc_to_docx.py ... --gdocs` prints the same steps and `--gdocs-compare <pdf>` compares with the kit PDF. Expect
+  a theme's Google font at its own weights in Slides and Docs; a font Google lacks shows as Arial, with weights 500
+  and 600 as regular and the largest text in an unnamed Type 3 font in Google's PDF. Docs sets a cover title a little
+  wider, so it can rewrap, and a Sheets PDF comes out Letter size. If Drive refuses the upload, `prepare --slim` sends a copy with tiny
+  pictures and no embedded fonts (Google never uses them; the theme stays). Never paste a file into the chat.
 - **Graphic**: `python3 tools/qc.py "<graphic>.html" --formats <format> -o <out>` runs the deck checks on it; then
   export (step 4) and look at every PNG at its real size.
 - **Every PDF**: the tools warn of a shadow with blur that reaches a PDF ("Warning, PDF: ... blurred shadow(s)"),
@@ -179,7 +205,8 @@ answer, publish as below, which writes all three, and hand over the files asked 
   deck and publish again. Only when you have looked at an issue and it is a false alarm, publish with
   `--accept "<why>"` and tell the user what was accepted. Publish again after any change. Then the PowerPoint QC below.
 - **Document**: the PDF from `doc_pdf.py` is the deliverable, with bookmarks, page numbers and its title, author and
-  subject in its properties. For a print shop, add `--print --marks` (CMYK, PDF/X-4, crop marks).
+  subject in its properties. For a print shop, add `--print --marks` (CMYK, PDF/X-4, crop marks). Add the Word copy
+  (step 3) when the user wants to edit the text.
 - **Graphic**: `python3 tools/export_graphic.py "<graphic>.html" -o "<folder>"` writes each design as a PNG at the
   platform size and at 2x, and a PDF; `--jpg` adds JPGs. For print, `--print` writes the real-size PDF with 3 mm
   bleed (`--size a3` and so on for posters, `--bleed` for another bleed), and `--press --marks` the CMYK PDF/X-4
@@ -188,6 +215,17 @@ answer, publish as below, which writes all three, and hand over the files asked 
 
 Any piece can change theme, palette, mode or format without a rewrite: `build.py`, `publish.py`, `qc.py` and
 `export_graphic.py` take `--theme`, `--palette`, `--mode` and `--format` to override what the file says.
+
+## Word and PDF
+- A kit document to Word: `tools/doc_to_docx.py` (step 3), from the built HTML, in any theme. Make every new Word
+  file this way, never by retyping, and check it before it goes out.
+- A Word file to PDF: LibreOffice with its lossless filter, `soffice --headless --convert-to
+  'pdf:writer_pdf_Export:{"UseLosslessCompression":{"type":"boolean","value":"true"},"ReduceImageResolution":{"type":"boolean","value":"false"}}'
+  <file>.docx` (a plain `--convert-to pdf` saves pictures as JPEG), or Word's own Save As PDF. The file's fonts must
+  be installed or embedded: list the PDF's fonts (PyMuPDF `page.get_fonts()`) before it goes out.
+- A PDF from elsewhere to Word: ask for its source first (the Word file, Google Doc or text it came from). Without
+  one, rebuild the content as a kit document (its text from PyMuPDF) and convert that with `doc_to_docx.py`, so the
+  Word copy gets the same checks.
 
 ## Attached files
 People attach two kinds of file, sometimes both in one request: sources for the content and references for the look.
@@ -318,8 +356,9 @@ Print, the PDF and the PowerPoint show every slide finished in every mode.
 
 ## PowerPoint QC (decks, every time, before sharing)
 1. Convert with `--check` (publish.py passes it on): every deck needs its LibreOffice, Arial and Google Slides tests.
-   Add `--powerpoint` (a Mac with PowerPoint; a view-only copy is enough) after a change to the converter, before a
-   release of the kit, or when the user asks. PowerPoint saves the file as PDF in `tools/powerpoint-check` and every
+   Add `--powerpoint` (a Mac with PowerPoint; a view-only copy is enough) before the person gets a PowerPoint when
+   their files open in Microsoft Office (First use, step 4), after a change to the converter, before a release of the
+   kit, or when the user asks. PowerPoint saves the file as PDF in `tools/powerpoint-check` and every
    line is compared with the HTML; the first run on a Mac shows PowerPoint's Grant File Access window for that
    folder, so ask the user to click Grant Access, once. The test quits PowerPoint when done, unless it was already
    open.
@@ -329,9 +368,14 @@ Print, the PDF and the PowerPoint show every slide finished in every mode.
    If the converter gets something wrong, say which slide and what, plainly.
 4. After `publish.py`, open the one-file HTML, check that Download offers PDF and PowerPoint, and look at every page
    of the PDF.
-5. When the deck goes to people who open it in Google Slides, or after a change to the converter, check it there too
-   (Claude in Chrome, set up in First use): upload the PowerPoint to the "Deck checks" folder, open it in Slides, look
-   at every slide against the HTML, then move the upload to the bin.
+5. Google Slides, where files open in Google (First use, step 4), the deck is headed there, or after a change to the
+   converter: run `python3 tools/drive_qc.py prepare "<deck>.pptx" --ref "<folder>/powerpoint.pdf"` (the PDF that
+   `--powerpoint --keep <folder>` saved; without `--ref` the check renders the deck with LibreOffice) and do the steps
+   it prints: upload the PowerPoint by file reference into the checks folder, export Google's PDF, move the upload to
+   the Drive's trash (always, also when a step fails), then run the `compare` line. It reports slides that start or
+   end differently, lines that moved, every font Google swapped and for what, pictures and missing words, and writes
+   a side-by-side sheet: look at every slide in it against the HTML. Touch nothing else in the Drive. Without the
+   connector, rely on the Arial and Google Slides layout tests and say so.
 Google Slides ignores fonts embedded in a PowerPoint. It shows a deck's Google font where it has the same family and
 Arial where it does not, so the type can look a little different there, but every line and shape stays in place. For
 an exact copy anywhere, share the PDF.
@@ -378,7 +422,8 @@ Label values on the chart itself and never tell items apart by colour alone. One
 
 ## Tools this needs
 Python 3 with `pymupdf`, `python-pptx` and `Pillow`; Google Chrome (or Chromium or Edge; set `CHROME_PATH` if it is
-somewhere unusual); LibreOffice for `--check`; PowerPoint on a Mac for `--powerpoint`. Paged.js and segno
+somewhere unusual); LibreOffice for `--check`; where files open in Microsoft Office, PowerPoint on a Mac for `--powerpoint` and an
+activated Word for `--word`; where they open in Google, the Google Drive connector. Paged.js and segno
 come with the kit (`tools/vendor/`). If a tool is missing, say so and give the install command; do not fall back to
 another method. `python3 tools/setup_check.py` lists what is present and what is missing; on a new computer, go
 through First use, above (`python3 tools/selftest.py` without `--quick` checks every theme).

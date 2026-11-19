@@ -204,6 +204,8 @@ instead (`data-page`).
 | `tools/qc.py` | builds and checks a deck in one or more formats (`--formats all`), with contact sheets |
 | `tools/doc_pdf.py` | prints a document to its PDF with page numbers, bookmarks and properties (`--print --marks` for a press copy) |
 | `tools/qc_doc.py` | checks a document and its PDF and draws a contact sheet of every page |
+| `tools/doc_to_docx.py` | an editable Word copy of a built document, any theme, fonts embedded, checked against the kit PDF in LibreOffice (`--check`), Word on a Mac (`--word`) and Google Docs (`--gdocs`) |
+| `tools/drive_qc.py` | shows how Google Docs, Slides or Sheets draws a Word, PowerPoint or Excel file, through the Google Drive connector |
 | `tools/export_graphic.py` | PNG, JPG and PDF of every design at platform size; `--print`, `--size`, `--bleed`, `--press`, `--marks` |
 | `tools/print_ready.py` | turns a PDF into a CMYK PDF/X-4 press file with trim and bleed boxes and crop marks |
 | `tools/qr.py` | QR codes (build.py inlines them; the command writes one as an SVG) |
@@ -232,7 +234,13 @@ copy.
 - PDFs keep only shadows without blur: Preview and Quick Look on Apple devices draw a blurred one, as Chrome prints
   it, as a solid grey box, and every print warns of any left. Soft shadows on screen become a hairline ring or
   nothing in print. A gradient that fades to transparent can look flatter in Preview.
-- Documents are PDFs: there is no Word copy. Page numbers count from the cover (no roman front matter).
+- Page numbers count from the cover (no roman front matter).
+- Word copies (`doc_to_docx.py`) keep the PDF's page count in LibreOffice and Google Docs, though a page can start a
+  few lines earlier or later. Charts and drawn art become pictures, round number badges become squares, a checklist's
+  ticks and crosses become plain bullets, and a heading beside other text (an invoice or CV header) can wrap early.
+  Google Docs keeps a theme's Google font at its own weights, shows Arial for a font it lacks, and sets a cover title
+  a little wider, so it can rewrap. Word itself has not checked them yet (`--word` needs an activated Word on a Mac), and
+  Word for Windows may set lines with automatic spacing up to a fifth taller. Share the PDF for an exact copy.
 - Press files follow PDF/X-4, but no free validator certifies them: the print shop's preflight has the last word.
 
 ## Licences
