@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert a House Style deck into an editable PowerPoint that matches it 1:1.
+"""Convert a Decks, Docs and Graphics deck into an editable PowerPoint that matches it 1:1.
 
     python3 tools/to_pptx.py samples/dist/showcase.html              # writes showcase.pptx beside it
     python3 tools/to_pptx.py deck.html -o out.pptx --check            # and compare every slide

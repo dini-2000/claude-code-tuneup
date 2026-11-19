@@ -1,4 +1,4 @@
-# House Style: reference
+# Decks, Docs and Graphics: reference
 
 The kit makes three things from one set of themes: slide decks, paged documents (PDF) and graphics (social posts,
 banners, posters, invitations, cards). `SKILL.md` gives the workflow; this file lists what the kit holds.

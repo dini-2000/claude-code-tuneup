@@ -1,4 +1,4 @@
-/* QC for House Style decks. tools/qc.py injects it into an isolated copy of a built deck; it never ships.
+/* QC for Decks, Docs and Graphics decks. tools/qc.py injects it into an isolated copy of a built deck; it never ships.
    It turns motion to static, measures every slide at its stage size (the format's own pixels, short side 1080) and
    writes JSON into pre#pc-qc: per slide the issues found, facts for the summary, and every line of text with its
    colour, which qc.py checks for contrast against the printed page. Checks: icons, content past the slide edge,

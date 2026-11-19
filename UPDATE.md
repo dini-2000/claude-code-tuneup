@@ -10,7 +10,7 @@ You are on the old setup if either of these prints something:
 grep -c "skill-router" ~/.claude/settings.json; ls ~/.claude/skills | wc -l
 ```
 
-A count near 536 means the old skill set. What changes: five skills stay in Claude's list and the rest cost nothing until used, the per-prompt echo gives way to a quick skill search Claude runs at the start of substantive tasks, and ~49,000 tokens of descriptions stop loading in every session.
+A count near 536 means the old skill set. What changes: six skills stay in Claude's list and the rest cost nothing until used, the per-prompt echo gives way to a quick skill search Claude runs at the start of substantive tasks, and Claude Code stops dropping skill descriptions to fit its listing budget.
 
 ---
 
@@ -20,15 +20,15 @@ Move the old folder aside, clone the repo to a folder of its own and run `setup.
 
 ```bash
 mv ~/.claude/skills ~/.claude/skills.old        # keep it until you are happy
-git clone https://github.com/dini-2000/claude-toolbox.git claude-toolbox
-cd claude-toolbox && ./setup.sh --all
+git clone https://github.com/dini-2000/claude-code-tuneup.git claude-code-tuneup
+cd claude-code-tuneup && ./setup.sh --all
 ```
 
 The skills sit in the repo's `skills/` folder, and `setup.sh` copies them into `~/.claude/skills`, so the clone is no longer the skills folder itself. `setup.sh` also removes the old echo hook (and the `skill_hint.py` hint hook, if your copy had it) and replaces the routing block in `~/.claude/CLAUDE.md` between its markers. If you edited skills, read "If you edited skills yourself" below.
 
 Then move any skills of your own back in from `~/.claude/skills.old`, and delete that folder when you are done.
 
-**If you cloned `claude-toolbox` to a folder of its own** and `git pull` refuses to merge, the history on GitHub was rewritten. Reset your clone to it:
+**If you cloned `claude-toolbox`, this repo's old name, to a folder of its own** and `git pull` refuses to merge, the history on GitHub was rewritten. Reset your clone to it:
 
 ```bash
 cd claude-toolbox
@@ -50,7 +50,7 @@ grep -c "\[skill-router\] Before answering" ~/.claude/settings.json  # 0, the ol
 python3 ~/.claude/skills/skill-router/find.py "SOC 2 audit"          # soc2-compliance first
 ```
 
-In a new session, ask Claude which skills it can see: you want `skill-router`, `stop-slop`, `context-optimization`, `systematic-debugging` and `verification-before-completion`, and nothing else from the pack. Then try a prompt like "prepare us for a SOC 2 audit": Claude should run the skill search before starting and name `soc2-compliance`.
+In a new session, ask Claude which skills it can see: you want `skill-router`, `stop-slop`, `context-optimization`, `systematic-debugging`, `verification-before-completion` and `routine`, and nothing else from the pack. Then try a prompt like "prepare us for a SOC 2 audit": Claude should run the skill search before starting and name `soc2-compliance`.
 
 ---
 
@@ -79,14 +79,15 @@ In a new session, ask Claude which skills it can see: you want `skill-router`, `
 
 - **Your own skills.** Only the pack's folders are managed; anything else in `~/.claude/skills` is left alone by `setup.sh`.
 - **Anthropic's own `docx`, `pdf`, `pptx` and `xlsx`**, which come from the app or your account, not from here. The pack's stale copies were dropped so they stop shadowing them.
+- **Any `HANDOFF.md` the old save-before-limit wrote.** The setting now saves to `IN PROGRESS.md`, the file the `agent-handover` skill keeps. Read an old `HANDOFF.md` once to pick up its task, or set `SAVE_BEFORE_LIMIT_FILE` to `HANDOFF.md` to keep the old name.
 
 ---
 
 ## What is always on now, and how to change it
 
-Two things load in every session, about 870 tokens together:
+Two things load in every session, about 1,000 tokens together:
 
-1. **Five skills** stay in Claude's list, so it can pick them itself: `skill-router` (finds the rest), `stop-slop` (prose), `context-optimization` (token and context work), `systematic-debugging` (bugs), `verification-before-completion` (before claiming something is done).
+1. **Six skills** stay in Claude's list, so it can pick them itself: `skill-router` (finds the rest), `stop-slop` (prose), `context-optimization` (token and context work), `systematic-debugging` (bugs), `verification-before-completion` (before claiming something is done), `routine` (medium effort for the mechanical rest of a turn).
 2. **A block in `~/.claude/CLAUDE.md`**, between `<!-- skill-router:start -->` and `<!-- skill-router:end -->`: condensed writing rules, token rules, and a pointer to the on-demand skills. Edit it freely; `setup.sh` only rewrites what is between those markers. Run `./setup.sh --no-rules` if you want the pointer without the writing and token rules.
 
 Everything else is on demand: `disable-model-invocation: true` in its frontmatter keeps it out of Claude's list, while you can still run it as `/name` and Claude can still load it by reading the file.
@@ -117,7 +118,7 @@ Skills you wrote yourself are better kept outside this repo, in their own folder
 ## Going back
 
 ```bash
-cd claude-toolbox && ./setup.sh --uninstall   # removes the CLAUDE.md block and the toolbox's hooks
+cd claude-code-tuneup && ./setup.sh --uninstall   # removes the CLAUDE.md block and the tune-up's hooks
 mv ~/.claude/skills ~/.claude/skills.new && mv ~/.claude/skills.old ~/.claude/skills
 ```
 

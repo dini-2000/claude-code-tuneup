@@ -1,11 +1,11 @@
 ---
 name: skill-router
-description: Finds and loads the right specialist playbook from the 583 on-demand skills in ~/.claude/skills, which are kept out of the skill list to save context. Use when a task is in a specialist area (finance and market data, strategy or board advice, research, SEO, marketing, copywriting, engineering, cloud, security, compliance and audits, design, product, sales, data) and no listed skill already covers it, at the start of a substantive task, or when the user asks for the best skill or names a skill that is not in the list.
+description: Finds and loads the right specialist playbook from the 585 on-demand skills in ~/.claude/skills, which are kept out of the skill list to save context. Use when a task is in a specialist area (finance and market data, strategy or board advice, research, SEO, marketing, copywriting, engineering, cloud, security, compliance and audits, design, product, sales, data) and no listed skill already covers it, at the start of a substantive task, or when the user asks for the best skill or names a skill that is not in the list.
 ---
 
 # Skill router
 
-Claude Toolbox is installed with `disable-model-invocation: true` on every skill except this one, stop-slop, context-optimization, systematic-debugging and verification-before-completion. On-demand skills cost no context: the user can run any of them as `/name`, and you load one by reading its file.
+Claude Code Tune-up is installed with `disable-model-invocation: true` on every skill except this one, stop-slop, context-optimization, systematic-debugging, verification-before-completion and routine. On-demand skills cost no context: the user can run any of them as `/name`, and you load one by reading its file.
 
 ## Find and load a skill
 1. Search: `python3 ~/.claude/skills/skill-router/find.py "<3 to 6 key terms>"` prints the five closest skills and says when none fits well. On Windows, where `python3` is often a Microsoft Store stub, run it with `python` or `py -3`.
@@ -33,11 +33,11 @@ Claude Toolbox is installed with `disable-model-invocation: true` on every skill
 - Engineering: senior-architect, senior-backend, senior-frontend, senior-fullstack, code-reviewer, adversarial-reviewer, tdd-guide, zero-hallucination-coder, database-designer, rag-architect, mcp-builder, performance-profiler, tech-debt-tracker
 - Cloud, DevOps and security: aws-solution-architect, azure-cloud-architect, gcp-cloud-architect, senior-devops, docker-development, kubernetes-operator, terraform-patterns, ci-cd-pipeline-builder, senior-security, cloud-security, threat-detection, incident-commander
 - Testing (Playwright commands are pw-*): pw, webapp-testing, senior-qa, api-test-suite-builder
-- Design and UI: house-style, frontend-design, ui-ux-pro-max, design-system, canvas-design, algorithmic-art, theme-factory, apple-hig-expert, a11y-audit, web-artifacts-builder
+- Design and UI: decks-docs-graphics, frontend-design, ui-ux-pro-max, design-system, canvas-design, algorithmic-art, theme-factory, apple-hig-expert, a11y-audit, web-artifacts-builder
 - Data and analytics: statistical-analyst, senior-data-scientist, senior-data-engineer, product-analytics, analytics-tracking, data-quality-auditor, sql-database-assistant
 - Sales and customers: sales-engineer, deal-desk, prospecting, rfp-responder, contract-and-proposal-writer, customer-success-manager, churn-prevention
 - Agents, prompts and context: agent-designer, multi-agent-patterns, prompt-engineer-toolkit, senior-prompt-engineer, context-optimization, context-compression, caveman, evaluation, advanced-evaluation
 - Dev process (Superpowers): brainstorming, writing-plans, executing-plans, subagent-driven-development, test-driven-development, requesting-code-review, receiving-code-review, finishing-a-development-branch, using-git-worktrees
 - Obsidian and notes: obsidian-markdown, obsidian-bases, obsidian-cli, json-canvas
 
-Installed from github.com/dini-2000/claude-toolbox by its setup.sh; that repo's README.md and UPDATE.md say how to update or remove it.
+Installed from github.com/dini-2000/claude-code-tuneup by its setup.sh; that repo's README.md and UPDATE.md say how to update or remove it.

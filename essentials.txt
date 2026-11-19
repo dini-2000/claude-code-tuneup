@@ -1,10 +1,12 @@
 # Essentials: the skills to start with. `./setup.sh --essentials` installs only these.
 # One skill folder per line; lines starting with # are ignored.
 
-# Finding skills, writing and context
+# Finding skills, usage and handovers
 skill-router
-stop-slop
 context-optimization
+routine
+context-audit
+agent-handover
 
 # Planning and building
 brainstorming
@@ -30,7 +32,8 @@ codebase-onboarding
 frontend-design
 webapp-testing
 
-# Research and documents
+# Writing, research and documents
+stop-slop
 deep-research
 research-summarizer
 doc-coauthoring

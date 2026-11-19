@@ -2,7 +2,7 @@
 """Save before a limit: get Claude to write down where a task stands before the chat is compacted or a usage limit
 ends the session, so the next session (or the same one after a summary) can pick up without losing work.
 
-The handover file is HANDOFF.md in the folder Claude Code runs in (set SAVE_BEFORE_LIMIT_FILE to use another name).
+The handover file is IN PROGRESS.md in the folder Claude Code runs in (set SAVE_BEFORE_LIMIT_FILE to use another name).
 
   save_before_limit.py          PostToolUse and UserPromptSubmit.
       Context: after each tool call it reads the chat's size from the transcript. At 85% of the point where Claude
@@ -28,7 +28,7 @@ import sys
 import tempfile
 import time
 
-FILE = os.environ.get("SAVE_BEFORE_LIMIT_FILE", "HANDOFF.md")
+FILE = os.environ.get("SAVE_BEFORE_LIMIT_FILE", "IN PROGRESS.md")
 SETTINGS = os.path.expanduser("~/.claude/settings.json")
 STATE = os.path.join(tempfile.gettempdir(), "save-before-limit")
 USAGE_TOOL = "mcp__ccd_session_mgmt__get_usage"

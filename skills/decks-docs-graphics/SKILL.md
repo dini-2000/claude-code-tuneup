@@ -1,12 +1,12 @@
 ---
-name: house-style
+name: decks-docs-graphics
 description: Design and build slide decks, paged PDF documents and graphics with this kit (talks, lessons, pitches, reports, papers, proposals, letters, CVs, invoices, newsletters, social posts, banners, posters, invitations, business cards), in one of 60 themes or a custom brand theme. Decks ship as one HTML file with its PDF and an editable PowerPoint; documents as print-quality PDFs; graphics as PNG, JPG and print-ready PDF with bleed.
 disable-model-invocation: true
 ---
 
-# House Style
+# Decks, Docs and Graphics
 
-This folder is House Style, a design kit for three media that share one set of themes:
+This folder is Decks, Docs and Graphics, a design kit for three media that share one set of themes:
 - **Decks**: slides in HTML, with the PDF and an editable PowerPoint that matches it 1:1.
 - **Documents**: paged PDFs (reports, papers, proposals, guides, letters, memos, CVs, invoices, one-pagers,
   newsletters, agendas, event programmes) with covers, contents, running heads, notes and page numbers.
@@ -52,7 +52,7 @@ can do. If the person asked for something, start on it once the set-up is done.
 > - **Microsoft Office**: on a Mac, I check each deck in PowerPoint itself (no Office licence needed), and each Word
 >   copy in Word if your Word is activated.
 > - **Google Slides and Docs**: you connect me to your Google Drive once. I upload a test copy of each file to one
->   folder there, "House Style checks", delete it when the check is done, and leave the rest of your Drive alone.
+>   folder there, "Decks, Docs and Graphics checks", delete it when the check is done, and leave the rest of your Drive alone.
 >
 > If something can't be set up, I tell you which check your work loses. Then tell me what you need. I choose a look
 > that suits each piece and name it when I deliver, unless you want to pick a theme yourself or have me design
@@ -88,7 +88,7 @@ step later if they ask.
    for Grant Access to `tools/word-check` the same way). On Windows neither check can run: say so.
 6. Google, through the Google Drive connector. Ask the person to connect Claude to Google Drive (Claude's settings,
    Connectors) with the Google account their files go to. Check that the connector answers and which account it
-   shows, then create the folder "House Style checks" in their Drive (`create_file` with contentMimeType
+   shows, then create the folder "Decks, Docs and Graphics checks" in their Drive (`create_file` with contentMimeType
    `application/vnd.google-apps.folder`) and save its id, alone, in `.drive-check-folder` in this kit folder, where
    `tools/drive_qc.py` finds it. Every check uploads its file into that folder by file reference, so the file never
    passes through the chat, and moves the copy to the Drive's trash when it is done. Touch nothing else in the Drive.

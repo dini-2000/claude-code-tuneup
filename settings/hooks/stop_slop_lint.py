@@ -4,7 +4,7 @@
 PostToolUse on Write, Edit and MultiEdit: .md, .html, .htm and .txt files; the whole file after a Write, the lines
 just edited after an Edit. Clean text prints nothing, so clean work costs no tokens, and the lint never blocks a save.
 Skipped as working files: anything under ~/.claude, hidden folders, node_modules, and CLAUDE.md, NOTES.md, MEMORY.md,
-SKILL.md and HANDOFF.md.
+SKILL.md, HANDOFF.md and IN PROGRESS.md.
 Reading: HTML as its visible text, Markdown without its code. Text in double quotes (quoted sources, the user's own
 words) is skipped.
 Patterns: em dashes and dash stand-ins; every quoted phrase in ~/.claude/skills/stop-slop/references/phrases.md, read
@@ -24,7 +24,7 @@ import sys
 HOME = os.path.realpath(os.path.expanduser("~"))
 PHRASES = os.path.join(HOME, ".claude/skills/stop-slop/references/phrases.md")
 PROSE = {".md", ".html", ".htm", ".txt"}
-SKIP_NAME = re.compile(r"^(CLAUDE|NOTES|MEMORY|SKILL|HANDOFF)\.md$", re.I)
+SKIP_NAME = re.compile(r"^(CLAUDE|NOTES|MEMORY|SKILL|HANDOFF|IN PROGRESS)\.md$", re.I)
 SKIP_DIRS = {"node_modules", "__pycache__", "site-packages"}
 BIG = 3_000_000
 KEEP = "quoted sources, names and fixed terms stay as they are."

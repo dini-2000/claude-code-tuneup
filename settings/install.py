@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Turn Claude Toolbox settings on or off in ~/.claude/settings.json.
+"""Turn Claude Code Tune-up settings on or off in ~/.claude/settings.json.
 
   python3 settings/install.py list
   python3 settings/install.py on  stop-slop save-before-limit     (or: essentials, optional, all)
   python3 settings/install.py off dictation-check                 (or: all)
 
-`on` copies the hook scripts to ~/.claude/hooks/claude-toolbox/ and adds their entries; `off` removes the entries.
+`on` copies the hook scripts to ~/.claude/hooks/claude-code-tuneup/ and adds their entries; `off` removes the entries.
 settings.json is backed up before any change (settings.json.bak-<date>), and entries you added yourself are left
 alone. Restart Claude Code afterwards so it reads the new settings.
 """
@@ -18,8 +18,9 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 CLAUDE = os.path.expanduser("~/.claude")
 SETTINGS = os.path.join(CLAUDE, "settings.json")
-DEST = os.path.join(CLAUDE, "hooks", "claude-toolbox")
-PY = os.environ.get("TOOLBOX_PYTHON", "python3")
+DEST = os.path.join(CLAUDE, "hooks", "claude-code-tuneup")
+OLD = "claude-toolbox"  # the folder before the rename: its entries count as ours, so `on` moves them and `off` removes them
+PY = os.environ.get("TUNEUP_PYTHON", "python3")
 
 
 def hook(script, *args):
@@ -32,7 +33,7 @@ SETS = {
                   ["stop_slop.py", "stop_slop_lint.py"],
                   [("SessionStart", None, hook("stop_slop.py")), ("UserPromptSubmit", None, hook("stop_slop.py")),
                    ("PostToolUse", "Write|Edit|MultiEdit", hook("stop_slop_lint.py"))]),
-    "save-before-limit": ("essential", "asks Claude to save HANDOFF.md before compaction or a usage limit",
+    "save-before-limit": ("essential", "asks Claude to save IN PROGRESS.md before compaction or a usage limit",
                           ["save_before_limit.py"],
                           [("PostToolUse", None, hook("save_before_limit.py")),
                            ("UserPromptSubmit", None, hook("save_before_limit.py")),
@@ -50,7 +51,7 @@ SETS = {
 
 def marks(name):
     """What identifies this setting's commands, whichever Python name they were written with."""
-    scripts = {os.path.join("claude-toolbox", f) for f in SETS[name][2]}
+    scripts = {os.path.join(d, f) for d in (os.path.basename(DEST), OLD) for f in SETS[name][2]}
     return scripts or {os.path.join("security-guidance", "hooks", "security_reminder_hook.py")}
 
 

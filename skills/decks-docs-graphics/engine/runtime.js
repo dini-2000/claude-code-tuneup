@@ -1,4 +1,4 @@
-/* House Style runtime: navigation, builds, charts, hand-drawn marks, icons, code colouring, notes, overview,
+/* Decks, Docs and Graphics runtime: navigation, builds, charts, hand-drawn marks, icons, code colouring, notes, overview,
    presenter window, reading view and the Download menu. One deck per page: <div class="pc-deck"> holding
    <section class="pc-slide"> children. Works from file:// with no network.
    API: window.PCDeck = { show, next, prev, count, index, set({theme, palette, mode, format, motion}), redraw,

@@ -1,6 +1,6 @@
 # Settings
 
-Hooks that change how Claude Code works in every session. Each is a Python script that `install.py` copies to `~/.claude/hooks/claude-toolbox/` and lists in `~/.claude/settings.json`.
+Hooks that change how Claude Code works in every session. Each is a Python script that `install.py` copies to `~/.claude/hooks/claude-code-tuneup/` and lists in `~/.claude/settings.json`.
 
 | Setting | Tier | What it does |
 |---|---|---|
@@ -37,18 +37,18 @@ Needs the `stop-slop` skill, which is in the essentials. It adds three hooks:
 The lint also runs on any file from a terminal, and exits with 1 when it finds something:
 
 ```bash
-python3 ~/.claude/hooks/claude-toolbox/stop_slop_lint.py README.md
+python3 ~/.claude/hooks/claude-code-tuneup/stop_slop_lint.py README.md
 ```
 
 ## save-before-limit
 
-A long task can stop without warning in two ways. Claude Code compacts the chat when it nears the context limit, so older turns survive only as a summary, and a plan's usage limit can end the session mid-step. This setting has Claude save its progress to `HANDOFF.md`, in the folder Claude Code runs in, before either happens. The save lists what is done, the files changed, the next step, decisions with their reasons, approaches dropped and open questions.
+A long task can stop without warning in two ways. Claude Code compacts the chat when it nears the context limit, so older turns survive only as a summary, and a plan's usage limit can end the session mid-step. This setting has Claude save its progress to `IN PROGRESS.md`, in the folder Claude Code runs in, before either happens. The save lists what is done, the files changed, the next step, decisions with their reasons, approaches dropped and open questions.
 
-- **Context.** After each tool call, the hook reads the chat's size from the transcript. At 85% of the point where Claude Code compacts, it asks Claude once to bring `HANDOFF.md` up to date. That point is the auto-compact window less the 33K tokens Claude Code keeps free: 167K by default, or taken from `CLAUDE_CODE_AUTO_COMPACT_WINDOW` or `autoCompactWindow` in `settings.json` when you set one. The hook asks again only after the chat has dropped below 60% of that point, as it does after a compaction.
+- **Context.** After each tool call, the hook reads the chat's size from the transcript. At 85% of the point where Claude Code compacts, it asks Claude once to bring `IN PROGRESS.md` up to date. That point is the auto-compact window less the 33K tokens Claude Code keeps free: 167K by default, or taken from `CLAUDE_CODE_AUTO_COMPACT_WINDOW` or `autoCompactWindow` in `settings.json` when you set one. The hook asks again only after the chat has dropped below 60% of that point, as it does after a compaction.
 - **Usage, in the Claude desktop app.** Only the desktop app lets Claude read the plan's usage. There, the hook asks Claude to check it now and then, more often as usage rises: every 30 minutes or 40 tool calls below 50%, down to every 2 minutes or 3 tool calls above 88%. At 90% and again at 97% of the 5-hour or weekly limit, it asks Claude for the save and shows you a notice. In the terminal, the hook watches context only.
-- **Cut-off.** When a usage limit ends a turn, the hook adds a dated line to `HANDOFF.md`. If there is no such file, it starts one with your last request, so the next session knows what was under way.
+- **Cut-off.** When a usage limit ends a turn, the hook adds a dated line to `IN PROGRESS.md`. If there is no such file, it starts one with your last request, so the next session knows what was under way.
 
-To pick up, start a new session in the same folder and ask Claude to read `HANDOFF.md` and carry on. To use another file name, set the `SAVE_BEFORE_LIMIT_FILE` environment variable, for example in the `env` block of `settings.json`.
+To pick up, start a new session in the same folder and ask Claude to read `IN PROGRESS.md` and carry on. The `agent-handover` skill keeps the same file, and keeps `HANDOFF.md` for notes another agent hands back. To use another file name, set the `SAVE_BEFORE_LIMIT_FILE` environment variable, for example in the `env` block of `settings.json`.
 
 ## dictation-check
 
@@ -69,10 +69,10 @@ Three scripts: `download_guard.py` (the hook), `safe_get.py` (the downloader) an
 `safe_get.py` works in steps, so you see what comes in before anything uses it:
 
 ```bash
-python3 ~/.claude/hooks/claude-toolbox/safe_get.py plan pypi:requests==2.32.3   # look it up, download nothing
-python3 ~/.claude/hooks/claude-toolbox/safe_get.py fetch <job> --yes "<your go-ahead>"
-python3 ~/.claude/hooks/claude-toolbox/safe_get.py release <job> <folder>       # or: install <job>
-python3 ~/.claude/hooks/claude-toolbox/safe_get.py intake ~/Downloads/file.pdf  # files that came another way
+python3 ~/.claude/hooks/claude-code-tuneup/safe_get.py plan pypi:requests==2.32.3   # look it up, download nothing
+python3 ~/.claude/hooks/claude-code-tuneup/safe_get.py fetch <job> --yes "<your go-ahead>"
+python3 ~/.claude/hooks/claude-code-tuneup/safe_get.py release <job> <folder>       # or: install <job>
+python3 ~/.claude/hooks/claude-code-tuneup/safe_get.py intake ~/Downloads/file.pdf  # files that came another way
 ```
 
 `plan` takes `github:owner/repo[@ref][:path]`, `url:https://...`, `pypi:name==version`, `npm:name@version` and `brew:formula`. `fetch` downloads over https only into `~/Quarantine.noindex/<date>-<name>/`, checks each file against its published fingerprint (git blob SHA, PyPI sha256, npm integrity, Homebrew sha256 or a GitHub release digest) and screens it without running anything: ClamAV when installed, `screen.py`'s checks, and checks by file type for programs, PDF actions, Office macros, archive tricks, hidden characters and text that gives instructions to an AI. `release` and `install` refuse anything that has not passed or been cleared, and both are logged in `ledger.tsv` in the quarantine folder.
@@ -81,4 +81,4 @@ Optional extras: ClamAV (`clamscan`) for malware signatures, PyMuPDF for deeper 
 
 ## Removing them
 
-`python3 settings/install.py off all`, or `./setup.sh --uninstall`, takes the entries out of `settings.json`. The scripts stay in `~/.claude/hooks/claude-toolbox/` until you delete that folder.
+`python3 settings/install.py off all`, or `./setup.sh --uninstall`, takes the entries out of `settings.json`. The scripts stay in `~/.claude/hooks/claude-code-tuneup/` (`claude-toolbox/` for installs from before the rename) until you delete that folder.

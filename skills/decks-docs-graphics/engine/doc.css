@@ -1,4 +1,4 @@
-/* House Style documents: paged PDFs (reports, papers, proposals, letters, CVs, newsletters, invoices, guides) in any
+/* Decks, Docs and Graphics documents: paged PDFs (reports, papers, proposals, letters, CVs, newsletters, invoices, guides) in any
    theme. The page is <html class="pc-deck pc-doc" data-theme data-mode data-palette data-type data-page>, so the
    theme's tokens.css applies to it as it does to a deck, and @page margin boxes inherit those tokens.
    Sizes are in pt. tools/build.py writes the page size and margins (from data-page, data-orient, data-type) and one

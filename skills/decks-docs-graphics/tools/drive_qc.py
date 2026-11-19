@@ -38,7 +38,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from doc_to_docx import lo_pdf, page_words  # noqa: E402
 
-KIT_MARK = 'House Style'
+KIT_MARK = 'Decks, Docs and Graphics'
 TYPES = {'.docx': ('application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'Google Docs', 'page'),
          '.pptx': ('application/vnd.openxmlformats-officedocument.presentationml.presentation', 'Google Slides', 'slide'),
          '.xlsx': ('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'Google Sheets', 'page')}

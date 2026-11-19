@@ -1,6 +1,6 @@
 # Skills index
 
-587 skills from Claude Toolbox, grouped by area. `auto` skills are in Claude's skill list; the rest load on demand: read `~/.claude/skills/<name>/SKILL.md`, or the user runs `/<name>`.
+590 skills from Claude Code Tune-up, grouped by area. `auto` skills are in Claude's skill list; the rest load on demand: read `~/.claude/skills/<name>/SKILL.md`, or the user runs `/<name>`.
 
 Flags: `scripts-missing` = calls a script that was not shipped (do that step by hand or skip it); `refs-missing` = points to reference docs that were not shipped; `saves-to-~/.claude` = files notes under ~/.claude.
 
@@ -17,7 +17,7 @@ Flags: `scripts-missing` = calls a script that was not shipped (do that step by 
 - Design, UI and media (30)
 - Testing and QA (28)
 - Cloud, DevOps and security (26)
-- AI agents, prompts and context (56)
+- AI agents, prompts and context (59)
 - Engineering and code (10)
 
 ## Executive, board and strategy
@@ -1664,6 +1664,10 @@ Sections: Overview; Core Capabilities; When to Use; Key Workflows; Conventional 
 Use when the user asks to create a CodeTour .tour file — persona-targeted, step-by-step walkthroughs that link to real files and line numbers. Trigger for: create a tour, onboarding tour, architecture tour, PR review tour, explain how X works, vibe check, RCA tour, contributor guide, or any structured code walkthrough request.
 Sections: Overview; When to Use This Skill; Core Workflow; Personas; Narrative Arc; Anti-Patterns; Cross-References
 
+### decks-docs-graphics
+Design and build slide decks, paged PDF documents and graphics with this kit (talks, lessons, pitches, reports, papers, proposals, letters, CVs, invoices, newsletters, social posts, banners, posters, invitations, business cards), in one of 60 themes or a custom brand theme. Decks ship as one HTML file with its PDF and an editable PowerPoint; documents as print-quality PDFs; graphics as PNG, JPG and print-ready PDF with bleed.
+Sections: First use; 1. Style; 2. Write; 3. Check; 4. Share; Word and PDF; Attached files; Changing a deck's theme; Detail in every theme; A theme of its own
+
 ### doc-coauthoring
 Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.
 Sections: When to Offer This Workflow; Stage 1: Context Gathering; Stage 2: Refinement & Structure; Stage 3: Reader Testing; Final Review; Tips for Effective Guidance
@@ -1687,10 +1691,6 @@ Sections: Overview; The Process; When to Stop and Ask for Help; When to Revisit 
 ### harness-writing
 Designs and improves fuzzing harnesses for C/C++ and Rust. Covers mapping raw bytes onto a target API, generating structured inputs, avoiding non-determinism and false crashes, and deciding what to fuzz together. Use when writing a first LLVMFuzzerTestOneInput or fuzz_target! harness, when a campaign finds nothing or reports crashes that will not reproduce, or when the target API needs structured rather than raw input.
 Sections: Overview; When to Apply; Quick Reference; Step-by-Step; Common Patterns; Advanced Usage; Practical Harness Rules; Anti-Patterns; Tool-Specific Guidance; Troubleshooting
-
-### house-style
-Design and build slide decks, paged PDF documents and graphics with this kit (talks, lessons, pitches, reports, papers, proposals, letters, CVs, invoices, newsletters, social posts, banners, posters, invitations, business cards), in one of 60 themes or a custom brand theme. Decks ship as one HTML file with its PDF and an editable PowerPoint; documents as print-quality PDFs; graphics as PNG, JPG and print-ready PDF with bleed.
-Sections: First use; 1. Style; 2. Write; 3. Check; 4. Share; Word and PDF; Attached files; Changing a deck's theme; Detail in every theme; A theme of its own
 
 ### incremental-implementation
 Delivers changes incrementally in thin, verifiable slices. Use when implementing any feature or change that touches more than one file, or when picking up the next task from a plan. Use when rolling a change out behind a feature flag, when you're about to write a large amount of code at once, or when a task feels too big to land in one step.
@@ -2147,6 +2147,10 @@ Sections: When to Use; When NOT to Use; Rationalizations to Reject; Usage; Execu
 This skill should be used for advanced LLM evaluation: LLM-as-judge systems, direct scoring, pairwise comparison, rubric calibration, evaluator bias mitigation, confidence scoring, and automated quality assessment.
 Sections: When to Activate; Core Concepts; Evaluation Approaches; Task; Original Prompt; Response to Evaluate; Criteria; Instructions; Output Format; Critical Instructions
 
+### agent-handover
+A handover system for work that runs across many sessions, accounts or agents, so that any session can be cut off and the next one picks up without loss. Use when setting up a workspace for long-running projects, when starting, pausing or finishing work in one, or when the user asks how to keep work resumable.
+Sections: Files in each project; Starting; During a task; Finishing; Keeping handovers lean; Several accounts or agents; Compact instructions
+
 ### agent-protocol
 Flags: saves-to-~/.claude
 Inter-agent communication protocol for C-suite agent teams. Defines invocation syntax, loop prevention, isolation rules, and response formats. Use when C-suite agents need to query each other, coordinate cross-functional analysis, or run board meetings with multiple agent roles.
@@ -2187,6 +2191,10 @@ Sections: Layer 01 — Signal detection; Layer 02 — WorkIntentClassifier; Laye
 ### commercial-skills
 Use when reviewing, approving, or designing commercial motion — pricing models, deal review, discount approval, partnership economics, channel mix, commercial policy, RFP/RFI response, bookings forecast. Triggers on "review this deal", "should we discount", "pricing model", "partner economics", "RFP response", "bookings forecast", "channel mix". Forks context to route to one of seven Commercial sub-skills (pricing-strategist, deal-desk, partnerships-architect, channel-economics, commercial-policy, rfp-responder, commercial-forecaster) and returns a digest. Distinct from business-growth (sales execution) and c-level-advisor/cro-advisor (strategic CRO judgment).
 Sections: When to invoke; Routing logic (deterministic); Workflow (Matt Pocock grill discipline); Forcing-question library (grill-with-docs pattern); Assumptions; Non-goals; Distinct from; Output artifacts; Anti-patterns (do not); References
+
+### context-audit
+Audits what Claude Code loads into every session (CLAUDE.md files, the auto-memory index, connectors and their tools) and trims it without losing anything. Run it when chats compact early, feel slow or burn through usage limits.
+Sections: 1. Measure; 2. CLAUDE.md: live content stays, history moves; 3. Memory index: one short line each; 4. Connectors: off where unused; 5. Report
 
 ### context-compression
 This skill should be used when long-running agent sessions need context compression, structured summarization, compaction, token-per-task optimization, or durable handoff summaries that preserve decisions, files, risks, and next actions.
@@ -2329,6 +2337,10 @@ Sections: Routing table; Quick start; Rules
 ### rag-architect
 Use when the user asks to design a RAG pipeline, choose a chunking strategy or embedding model, pick a vector database, or evaluate retrieval quality (precision@k, recall@k, NDCG). Examples: 'design a RAG system for our docs', 'what chunk size should I use for this corpus', 'evaluate my retriever against ground truth'. NOT for general LLM cost tuning (use llm-cost-optimizer) or agent loops over retrieval (use agenthub).
 Sections: Hard rules; Embedding model tiers (pattern, not price list); Workflow; References
+
+### routine
+Flags: auto
+Drops reasoning effort to medium for the rest of this turn. Call it yourself once everything left in the turn is mechanical, such as the wrap-up after the work is checked and delivered (progress notes, CLAUDE.md and log updates, memory pointers, renames, commits and pushes), or a turn that only moves files or reruns known commands. Never call it before QC, analysis, research or writing for the user.
 
 ### sample-skill
 Sample Text Processor

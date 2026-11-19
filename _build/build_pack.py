@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Curated install of Claude Toolbox (github.com/dini-2000/claude-toolbox) into ~/.claude/skills.
+"""Curated install of Claude Code Tune-up (github.com/dini-2000/claude-code-tuneup) into ~/.claude/skills.
 
     python3 build_pack.py <extracted pack dir>            # stage in a temp dir and validate only
     python3 build_pack.py <extracted pack dir> --install  # stage, validate, then install
@@ -135,7 +135,7 @@ DUPES = {"competitors": "competitor-alternatives", "onboarding": "onboarding-cro
          "post-mortem": "postmortem", "revenue-operations": "revops"}
 PW = ["init", "review", "fix", "generate", "migrate", "coverage", "report", "testrail", "browserstack"]
 RENAME = {n: "pw-" + n for n in PW}  # Playwright sub-commands: stop /init and /review clashes and generic names
-TIER1 = {"skill-router", "stop-slop", "context-optimization", "systematic-debugging", "verification-before-completion"}
+TIER1 = {"skill-router", "stop-slop", "context-optimization", "systematic-debugging", "verification-before-completion", "routine"}
 BUILTIN = set("""add-dir agents batch bashes bug btw claude-api clear code-review compact config context copy cost debug
 desktop doctor effort exit export fast feedback fewer-permission-prompts help hooks ide init insights install-github-app
 keybindings-help login logout loop mcp memory mobile model output-style permissions plan plugin pr-comments
@@ -143,7 +143,7 @@ privacy-settings release-notes remote-control resume review rewind run sandbox s
 stats status statusline tasks teleport terminal-setup theme todos update-config upgrade usage vim dataviz
 artifact-design artifact-diagramming artifact-capabilities""".split())
 
-REPO_ONLY = ("house-style",)  # products built into repo/skills by their own scripts: --repo keeps them and lists them in the repo's router
+REPO_ONLY = ("decks-docs-graphics",)  # products built into repo/skills by their own scripts: --repo keeps them and lists them in the repo's router
 DOMAINS = [
     ("Writing and editing", "stop-slop copywriting copy-editing content-humanizer doc-coauthoring internal-comms md-document"),
     ("Decks and board material", "board-deck-builder md-slides slides board-prep board-meeting internal-narrative"),
@@ -157,7 +157,7 @@ DOMAINS = [
     ("Engineering", "senior-architect senior-backend senior-frontend senior-fullstack code-reviewer adversarial-reviewer tdd-guide zero-hallucination-coder database-designer rag-architect mcp-builder performance-profiler tech-debt-tracker"),
     ("Cloud, DevOps and security", "aws-solution-architect azure-cloud-architect gcp-cloud-architect senior-devops docker-development kubernetes-operator terraform-patterns ci-cd-pipeline-builder senior-security cloud-security threat-detection incident-commander"),
     ("Testing (Playwright commands are pw-*)", "pw webapp-testing senior-qa api-test-suite-builder"),
-    ("Design and UI", "house-style frontend-design ui-ux-pro-max design-system canvas-design algorithmic-art theme-factory apple-hig-expert a11y-audit web-artifacts-builder"),
+    ("Design and UI", "decks-docs-graphics frontend-design ui-ux-pro-max design-system canvas-design algorithmic-art theme-factory apple-hig-expert a11y-audit web-artifacts-builder"),
     ("Data and analytics", "statistical-analyst senior-data-scientist senior-data-engineer product-analytics analytics-tracking data-quality-auditor sql-database-assistant"),
     ("Sales and customers", "sales-engineer deal-desk prospecting rfp-responder contract-and-proposal-writer customer-success-manager churn-prevention"),
     ("Agents, prompts and context", "agent-designer multi-agent-patterns prompt-engineer-toolkit senior-prompt-engineer context-optimization context-compression caveman evaluation advanced-evaluation"),
@@ -174,7 +174,7 @@ CATS = [
     ("Marketing, growth and copy", r"\b(marketing|copywrit|copy-edit|ads?\b|ad-|advertis|campaign|email|newsletter|social|content|brand|cro\b|conversion|landing|launch|pricing|referral|growth|paywall|popup|signup|onboarding|lead.magnet|webinar|public.relations|youtube|twitter|sms|aso\b|app.store|offer|free.tool|directory|community|competitor)"),
     ("Product and project management", r"\b(product|roadmap|backlog|user.stor|sprint|scrum|agile|prd|spec|discovery|experiment|ab.test|a/b|jira|confluence|atlassian|senior-pm|pm-|process|change.management|capacity|tc-tracker)"),
     ("Research and analysis", r"\b(research|literature|litreview|patent|grant|dossier|survey|interview|syllabus|meeting.analyzer)"),
-    ("Writing, docs and presentations", r"\b(house-style|writ|prose|slop|humaniz|doc|slides|deck|presentation|markdown|md-|obsidian|canvas|narrative|comms|communication|changelog|tour|onboard)"),
+    ("Writing, docs and presentations", r"\b(decks-docs-graphics|writ|prose|slop|humaniz|doc|slides|deck|presentation|markdown|md-|obsidian|canvas|narrative|comms|communication|changelog|tour|onboard)"),
     ("Design, UI and media", r"\b(design|ui|ux|tailwind|css|frontend|typograph|accessib|a11y|wcag|art\b|image|video|gif|banner|theme|remotion|screenshot|hig)"),
     ("Testing and QA", r"\b(test|playwright|pw\b|pw-|qa\b|coverage|testrail|browserstack|cypress|selenium)"),
     ("Cloud, DevOps and security", r"\b(aws|azure|gcp|cloud|devops|docker|kubernetes|helm|terraform|ci.cd|observab|slo|incident|security|secops|threat|pen.test|red.team|secret|vault|chaos|feature.flag|migration|snowflake|monorepo|ms365|google-workspace|dependency)"),
@@ -358,7 +358,11 @@ def body_sans_name(d):
     return re.sub(r"^name:.*$", "", open(os.path.join(SRC, d, "SKILL.md"), encoding="utf-8").read(), count=1, flags=re.M)
 
 
+AREA = {"routine": "AI agents, prompts and context", "context-audit": "AI agents, prompts and context"}  # names the patterns would misfile
+
+
 def category(name, desc):
+    if name in AREA: return AREA[name]
     for field in (name, desc.lower()):
         for title, pat in CATS[:-1]:
             if re.search(pat, field): return title
@@ -378,7 +382,7 @@ def write_router(stage, desc, flags, sections, final):
     groups = collections.defaultdict(list)
     for n in sorted(desc): groups[category(n, desc[n])].append(n)
     order = [t for t, _ in CATS if groups.get(t)]
-    idx = [f"# Skills index\n\n{len(desc)} skills from Claude Toolbox, grouped by area. `auto` skills are in Claude's skill list; the rest load on demand: read `~/.claude/skills/<name>/SKILL.md`, or the user runs `/<name>`.\n",
+    idx = [f"# Skills index\n\n{len(desc)} skills from Claude Code Tune-up, grouped by area. `auto` skills are in Claude's skill list; the rest load on demand: read `~/.claude/skills/<name>/SKILL.md`, or the user runs `/<name>`.\n",
            "Flags: `scripts-missing` = calls a script that was not shipped (do that step by hand or skip it); `refs-missing` = points to reference docs that were not shipped; `saves-to-~/.claude` = files notes under ~/.claude.\n",
            "## Contents\n" + "\n".join(f"- {t} ({len(groups[t])})" for t in order) + "\n"]
     for t in order:
@@ -649,7 +653,7 @@ description: Finds and loads the right specialist playbook from the {n} on-deman
 
 # Skill router
 
-Claude Toolbox is installed with `disable-model-invocation: true` on every skill except this one, stop-slop, context-optimization, systematic-debugging and verification-before-completion. On-demand skills cost no context: the user can run any of them as `/name`, and you load one by reading its file.
+Claude Code Tune-up is installed with `disable-model-invocation: true` on every skill except this one, stop-slop, context-optimization, systematic-debugging, verification-before-completion and routine. On-demand skills cost no context: the user can run any of them as `/name`, and you load one by reading its file.
 
 ## Find and load a skill
 1. Search: `python3 ~/.claude/skills/skill-router/find.py "<3 to 6 key terms>"` prints the five closest skills and says when none fits well. On Windows, where `python3` is often a Microsoft Store stub, run it with `python` or `py -3`.
@@ -671,7 +675,7 @@ Claude Toolbox is installed with `disable-model-invocation: true` on every skill
 """
 LOCAL_NOTE = (f"Installed by `{os.path.abspath(__file__).replace(os.path.expanduser('~'), '~', 1)}`; "
               "the notes beside it say how to update or remove it.")
-PUBLIC_NOTE = "Installed from github.com/dini-2000/claude-toolbox by its setup.sh; that repo's README.md and UPDATE.md say how to update or remove it."
+PUBLIC_NOTE = "Installed from github.com/dini-2000/claude-code-tuneup by its setup.sh; that repo's README.md and UPDATE.md say how to update or remove it."
 
 FIND = r'''#!/usr/bin/env python3
 """Search the on-demand skills by a task's key terms (catalog.tsv next to this file).

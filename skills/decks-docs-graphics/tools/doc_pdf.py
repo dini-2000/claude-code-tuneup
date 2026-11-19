@@ -97,7 +97,7 @@ def make_pdf(html_path, out, title=None, quiet=False, bleed=0):
     md = doc.metadata or {}
     md.update({'title': title or (html.unescape(m.group(1)).strip() if m else ''), 'author': meta(text, 'author'),
                'subject': meta(text, 'description'), 'keywords': meta(text, 'keywords'),
-               'creator': 'House Style' + ('. ' + meta(text, 'theme-credit') if meta(text, 'theme-credit') else '')})
+               'creator': 'Decks, Docs and Graphics' + ('. ' + meta(text, 'theme-credit') if meta(text, 'theme-credit') else '')})
     doc.set_metadata(md)
     doc.set_pagemode('UseOutlines' if toc else 'UseNone')
     if bleed:

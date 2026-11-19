@@ -46,7 +46,7 @@ sys.path.insert(0, str(TOOLS))
 import chrome  # noqa: E402
 import fontinfo  # noqa: E402
 
-KIT_MARK = 'House Style'
+KIT_MARK = 'Decks, Docs and Graphics'
 WALKER = TOOLS / 'doc_to_docx.js'
 CHECK_DIR = TOOLS / 'word-check'
 

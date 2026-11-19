@@ -9,7 +9,7 @@
 #                              none when no one is there to answer). Change them later with settings/install.py.
 #   ./setup.sh --with-massgen  also install the massgen CLI (explained below)
 #   ./setup.sh --no-rules      install only the skills pointer, not the writing and token rules
-#   ./setup.sh --uninstall     remove the block, the toolbox hooks and any old hook (the skills stay; see README)
+#   ./setup.sh --uninstall     remove the block, the tune-up's hooks and any old hook (the skills stay; see README)
 #
 # It is idempotent: settings.json is backed up before an old hook is taken out, and the CLAUDE.md
 # block is replaced between its markers. It needs bash (Git Bash on Windows) and Python 3.
@@ -59,7 +59,7 @@ if os.path.exists(claudemd):
         open(claudemd, "w", encoding="utf-8").write(n)
         print("    block removed from CLAUDE.md")
 PY
-  [ -f "$HERE/settings/install.py" ] && TOOLBOX_PYTHON="$PY" $PY "$HERE/settings/install.py" off all
+  [ -f "$HERE/settings/install.py" ] && TUNEUP_PYTHON="$PY" $PY "$HERE/settings/install.py" off all
   echo "Done. The skills in $SKILLS_DIR were left in place; README.md (Uninstall) shows how to remove only this repo's skills."
   exit 0
 fi
@@ -209,7 +209,7 @@ if [ -z "$SETS" ]; then
   fi
 fi
 case "$SETS" in
-  essentials|all) echo "==> Turning on settings ($SETS) ..."; TOOLBOX_PYTHON="$PY" $PY "$HERE/settings/install.py" on "$SETS" ;;
+  essentials|all) echo "==> Turning on settings ($SETS) ..."; TUNEUP_PYTHON="$PY" $PY "$HERE/settings/install.py" on "$SETS" ;;
   none) echo "==> Settings left off. Turn them on any time: $PY settings/install.py on essentials" ;;
   *) echo "unknown --settings value: $SETS (essentials, all or none)" >&2; exit 2 ;;
 esac

@@ -1,4 +1,4 @@
-/* House Style engine: formats, slide shells and components.
+/* Decks, Docs and Graphics engine: formats, slide shells and components.
    Every colour, font, size and shape comes from tokens. Each theme keeps its tokens in themes/<id>/theme.json;
    tools/build_themes.py turns them into themes/<id>/tokens.css (every mode, palette and surface, with colours checked
    for contrast) and themes/<id>/theme.css adds the theme's signature art. A deck changes theme, palette, mode or

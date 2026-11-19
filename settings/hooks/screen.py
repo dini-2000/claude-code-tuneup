@@ -43,7 +43,7 @@ def flag(level, text):
 def fetch(url, body=None):
     """JSON from a URL (POST when body is given); None on 404. Falls back to curl on certificate errors."""
     data = json.dumps(body).encode() if body is not None else None
-    head = {"User-Agent": "claude-toolbox-screen", "Accept": "application/json"}
+    head = {"User-Agent": "claude-code-tuneup-screen", "Accept": "application/json"}
     if data:
         head["Content-Type"] = "application/json"
     try:

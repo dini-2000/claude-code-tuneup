@@ -291,8 +291,8 @@ def xmp(title, author, when, doc_id):
    <xmp:CreateDate>%s</xmp:CreateDate>
    <xmp:ModifyDate>%s</xmp:ModifyDate>
    <xmp:MetadataDate>%s</xmp:MetadataDate>
-   <xmp:CreatorTool>House Style</xmp:CreatorTool>
-   <pdf:Producer>House Style print_ready.py (PyMuPDF)</pdf:Producer>
+   <xmp:CreatorTool>Decks, Docs and Graphics</xmp:CreatorTool>
+   <pdf:Producer>Decks, Docs and Graphics print_ready.py (PyMuPDF)</pdf:Producer>
    <pdf:Trapped>False</pdf:Trapped>
    <xmpMM:DocumentID>uuid:%s</xmpMM:DocumentID>
    <xmpMM:InstanceID>uuid:%s</xmpMM:InstanceID>
@@ -369,7 +369,7 @@ def make(src, out=None, profile='fogra39', bleed=None, crop=False, proof=False, 
     pdfdate = now.strftime("D:%Y%m%d%H%M%S") + now.strftime('%z')[:3] + "'" + now.strftime('%z')[3:] + "'"
     _, info = output_intent(doc, profile)
     doc.set_metadata({'title': title, 'author': md.get('author', ''), 'subject': md.get('subject', ''),
-                      'keywords': md.get('keywords', ''), 'creator': 'House Style', 'producer': 'House Style print_ready.py (PyMuPDF)',
+                      'keywords': md.get('keywords', ''), 'creator': 'Decks, Docs and Graphics', 'producer': 'Decks, Docs and Graphics print_ready.py (PyMuPDF)',
                       'creationDate': pdfdate, 'modDate': pdfdate, 'trapped': ''})
     info_x = int(doc.xref_get_key(-1, 'Info')[1].split()[0])
     doc.xref_set_key(info_x, 'Trapped', '/False')
