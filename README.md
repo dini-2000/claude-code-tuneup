@@ -59,6 +59,8 @@ Each step above is real output from the tune-up. The skill search comes from the
 
 The agent-handover skill sets out these files, when to update them and how a fresh session picks up. The save-before-limit setting asks Claude to bring `IN PROGRESS.md` up to date as the chat nears compaction and, in the desktop app, at 90% and 97% of a usage limit. When a limit ends a turn, it still adds a dated line to the file, so the next session knows where the work stopped.
 
+The skill also comes with two scripts for your AI to fit to your own folders: `handover.py` shows every project's unfinished work at the start of each session and points a session that follows a `/clear` at the right files, and `backup.py` keeps the workspace in a private git repository, checking for secrets before each commit. [The setup guide](skills/agent-handover/setup.md) takes your AI through it step by step.
+
 ### 591 skills, 6 in Claude's list
 
 <picture>
@@ -162,7 +164,7 @@ The full install adds Decks, Docs and Graphics and skills for finance and market
 
 `skills/decks-docs-graphics` is a design kit made for the tune-up. It builds slide decks, paged PDF documents and graphics in 60 themes, or in a theme made from your own logo, brand guide or PowerPoint template. A deck comes out as one HTML file with its PDF and an editable PowerPoint that matches it slide for slide. Documents (reports, proposals, letters, CVs, invoices, newsletters) come out as print-quality PDFs, with a CMYK PDF/X-4 copy for a print shop and an editable Word copy when you want one. Graphics (social posts, banners, posters, invitations, business cards) come out as PNG, JPG and PDF at each platform's size. A style picker in the browser lets you compare themes before you choose. Before a file goes out, the kit checks it where it will be opened: in PowerPoint or Word on a Mac, or, once you connect Claude to Google Drive, in Google Slides, Docs or Sheets, using one test folder in your Drive.
 
-A full install includes it. The essentials leave it out, since its fonts, flags and maps make it about 67 MB; to add it on its own, copy `skills/decks-docs-graphics` into `~/.claude/skills`. It needs Python 3 with `pymupdf`, `python-pptx` and `Pillow`, and Google Chrome, Chromium or Edge; LibreOffice is optional, for the PowerPoint and Word checks. Run `python3 tools/selftest.py --quick` from its folder once to check it works on your computer. Then call it as `/decks-docs-graphics`, or ask for a deck, report or poster: the skill search lists it among the closest matches. [Its README](skills/decks-docs-graphics/README.md) lists every tool, theme and known limit.
+A full install includes it. The essentials leave it out, since its fonts, flags and maps make it about 67 MB; to add it on its own, copy `skills/decks-docs-graphics` into `~/.claude/skills`, or clone [its own repository](https://github.com/dini-2000/decks-docs-graphics) there. It needs Python 3 with `pymupdf`, `python-pptx` and `Pillow`, and Google Chrome, Chromium or Edge; LibreOffice is optional, for the PowerPoint and Word checks. Run `python3 tools/selftest.py --quick` from its folder once to check it works on your computer. Then call it as `/decks-docs-graphics`, or ask for a deck, report or poster: the skill search lists it among the closest matches. [Its README](skills/decks-docs-graphics/README.md) lists every tool, theme and known limit.
 
 ## Settings
 

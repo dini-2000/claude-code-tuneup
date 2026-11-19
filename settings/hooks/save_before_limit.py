@@ -7,7 +7,8 @@ The handover file is IN PROGRESS.md in the folder Claude Code runs in (set SAVE_
   save_before_limit.py          PostToolUse and UserPromptSubmit.
       Context: after each tool call it reads the chat's size from the transcript. At 85% of the point where Claude
       Code compacts the chat (CLAUDE_CODE_AUTO_COMPACT_WINDOW or autoCompactWindow in ~/.claude/settings.json, less
-      the 33K Claude Code keeps free; 167K by default) it asks Claude once to bring the handover file up to date.
+      the 33K Claude Code keeps free; 167K by default) it asks Claude once to bring the handover file up to date,
+      or, when the work is finished and handed over, to offer the user a fresh start with /clear.
       It asks again only after the chat has dropped below 60%, as it does after a compaction.
       Usage (Claude desktop app only, where Claude can read its plan's usage with mcp__ccd_session_mgmt__get_usage):
       it asks Claude to check usage now and then, more often as usage rises (every 30 minutes or 40 tool calls below
@@ -175,7 +176,9 @@ def check(hook):
                 st["armed"] = False
                 notes.append(f"Context {ctx // 1000}K of the {point // 1000}K compact point: this chat will be "
                              f"summarised soon. If a task is under way, bring {FILE} up to date now ({SAVE_WHAT}), so "
-                             "nothing is lost. Nothing pending: carry on.")
+                             "nothing is lost. If the work is finished and its handover saved, a fresh start loses "
+                             "nothing and costs less than a summary: at the end of the turn, ask the user whether to "
+                             "clear the chat (/clear) instead of letting it compact. Otherwise carry on.")
     save(path, st)
     if notes:
         reply(event, "\n\n".join(notes), notice)
