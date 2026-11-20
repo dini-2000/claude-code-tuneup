@@ -226,7 +226,6 @@ Parts the engine lacks (bars with estimates or a target, a share bar, a flow map
 copy.
 
 ## Known limits
-- Sinhala and Tamil: basic support only. Decks with either script need the extra checks in SKILL.md.
 - Google Slides ignores fonts embedded in a PowerPoint: it shows a deck's Google font where it has that family and
   Arial where it does not. The layout holds. Share the PDF for an exact copy.
 - Complex motion is for the screen; its PDF and PowerPoint show finished slides.
